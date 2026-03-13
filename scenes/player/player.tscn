@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://cg65kwkxenppq"]
+
+[ext_resource type="Script" uid="uid://dun4dnd4kapso" path="res://scenes/player/scripts/player.gd" id="1_g1dw6"]
+[ext_resource type="SpriteFrames" uid="uid://fpx0h3t24vl6" path="res://scenes/player/assets/player_sprite_frames.tres" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://cykgmdrwt0qkx" path="res://scenes/player/scripts/states/moving.gd" id="4_qjkh3"]
+[ext_resource type="Script" uid="uid://s5yd6rxphgmq" path="res://scripts/state_machine.gd" id="4_yw30f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
+size = Vector2(14, 20)
+
+[node name="Player" type="CharacterBody2D" unique_id=1087271331]
+script = ExtResource("1_g1dw6")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=1533129528]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_oul6g")
+animation = &"move_down"
+autoplay = "move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1424195601]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_g1dw6")
+
+[node name="StateMachine" type="Node" parent="." unique_id=819913121 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("4_yw30f")
+initial_state = NodePath("Moving")
+
+[node name="Moving" type="Node" parent="StateMachine" unique_id=340311390]
+script = ExtResource("4_qjkh3")
+move_speed = 77.0
+metadata/_custom_type_script = "uid://cykgmdrwt0qkx"
