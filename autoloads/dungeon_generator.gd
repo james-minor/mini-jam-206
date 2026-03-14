@@ -44,21 +44,21 @@ func _to_string() -> String:
 	var output: String = ""
 	for y in range(DIMENSIONS.y - 1, -1, -1):
 		for x in DIMENSIONS.x:
-			if get_dungeon_data(Vector2i(x, y)) == RoomType.EMPTY:
+			if get_room_data(Vector2i(x, y)) == RoomType.EMPTY:
 				output += "[ ]"
 			else:
-				output += "[" + str(get_dungeon_data(Vector2i(x, y))) + "]"
+				output += "[" + str(get_room_data(Vector2i(x, y))) + "]"
 		output += "\n"
 	return output
 
 
 ## Helper function that returns the data in the dungeon array for a specific room position.
-func get_dungeon_data(position: Vector2i) -> RoomType:
+func get_room_data(position: Vector2i) -> RoomType:
 	return _dungeon[_convert_position_to_index(position)]
 
 
 ## Helper function that sets the data for a room.
-func set_dungeon_data(position: Vector2i, value: RoomType) -> void:
+func set_room_data(position: Vector2i, value: RoomType) -> void:
 	_dungeon[_convert_position_to_index(position)] = value
 
 
@@ -92,7 +92,7 @@ func _place_entrance() -> void:
 		entrance_position.x = randi_range(0, DIMENSIONS.x - 1)
 		entrance_position.y = randi_range(0, DIMENSIONS.y - 1)
 	
-	set_dungeon_data(Vector2i(entrance_position.x, entrance_position.y), RoomType.START)
+	set_room_data(Vector2i(entrance_position.x, entrance_position.y), RoomType.START)
 
 
 func _generate_critical_path(current: Vector2i, length: int, room_type: RoomType) -> bool:
@@ -106,16 +106,16 @@ func _generate_critical_path(current: Vector2i, length: int, room_type: RoomType
 	var direction : Vector2i = possible_directions[randi_range(0, 3)]
 	
 	for i in 4:
-		if _is_valid_position(current + direction) and get_dungeon_data(Vector2i(current.x + direction.x, current.y + direction.y)) == RoomType.EMPTY:
+		if _is_valid_position(current + direction) and get_room_data(Vector2i(current.x + direction.x, current.y + direction.y)) == RoomType.EMPTY:
 			current += direction
 			if length > 1:
-				set_dungeon_data(Vector2i(current.x, current.y), room_type)
+				set_room_data(Vector2i(current.x, current.y), room_type)
 			_branch_candidates.append(current)
 			if _generate_critical_path(current, length - 1, room_type):
 				return true
 			else:
 				_branch_candidates.erase(current)
-				set_dungeon_data(Vector2i(current.x, current.y), RoomType.EMPTY)
+				set_room_data(Vector2i(current.x, current.y), RoomType.EMPTY)
 				current -= direction
 		direction = Vector2(direction.y, -direction.x)
 	
@@ -136,7 +136,7 @@ func _generate_branch() -> void:
 func _place_exit() -> void:
 	var exit = _branch_candidates[randi_range(0, _branch_candidates.size() - 1)]
 	_branch_candidates.erase(exit)
-	set_dungeon_data(Vector2i(exit.x, exit.y), RoomType.EXIT)
+	set_room_data(Vector2i(exit.x, exit.y), RoomType.EXIT)
 
 
 # Returns true if the passed position is within the bounds of the floor DIMENSIONS.
