@@ -5,10 +5,6 @@ extends PlayerState
 var move_speed: float
 
 
-func on_enter_state() -> void:
-	print("Moving :)")
-
-
 func input_state(event: InputEvent) -> void:
 	if event.is_action_pressed("move_down"):
 		%PlayerSprite.animation = "move_down"
@@ -36,3 +32,7 @@ func physics_process_state(_delta: float) -> void:
 	
 	player.velocity = move_speed * input_vector
 	player.move_and_slide()
+
+
+func _on_death_collider_detector_body_entered(_body: Node2D) -> void:
+	transition_to("dead")
