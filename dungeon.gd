@@ -5,9 +5,11 @@ extends Node2D
 @export var critical_path_length : int = 20
 @export var branches : int = 4
 @export var branch_length : Vector2i = Vector2i(1, 4)
+
 var _branch_candidates : Array[Vector2i]
 var _current_room : Vector2i
-var _dungeon : Array
+var _dungeon : Array # this is just for debugging/visualizing. 
+					 # Is effectively replaced by rooms_data_list
 
 
 func _ready() -> void:
@@ -17,21 +19,15 @@ func _ready() -> void:
 	_generate_critical_path(start, critical_path_length, "m")
 	_generate_branch()
 	_place_exit()
+	_generate_room_info()
 	_print_dungeon()
+
 
 func _initialize_dungeon() -> void:
 	for x in dimensions.x:
 		_dungeon.append([])
 		for y in dimensions.y:
 			_dungeon[x].append(0)
-			
-func _print_dungeon() -> void:
-	var dungeon_as_string : String = ""
-	for y in range(dimensions.y - 1, -1, -1):
-		for x in dimensions.x:
-			dungeon_as_string += "[" + str(_dungeon[x][y]) + "]"
-		dungeon_as_string += "\n"
-	print(dungeon_as_string)
 
 func _place_entrance() -> void:
 	if start.x < 0 or start.x >= dimensions.x:
@@ -39,11 +35,6 @@ func _place_entrance() -> void:
 	if start.y < 0 or start.y >= dimensions.y:
 		start.y = randi_range(0, dimensions.y - 1)
 	_dungeon[start.x][start.y] = "S"
-
-func _place_exit() -> void:
-	var exit = _branch_candidates[randi_range(0, _branch_candidates.size() - 1)]
-	_branch_candidates.erase(exit)
-	_dungeon[exit.x][exit.y] = "E"
 
 func _generate_critical_path(current: Vector2i, length: int, room_type: String) -> bool:
 	if (length == 0): 
@@ -86,11 +77,29 @@ func _generate_branch() -> void:
 		else:
 			_branch_candidates.erase(candidate)
 
-func register_player():
-	_current_room = start
-	
+func _place_exit() -> void:
+	var exit = _branch_candidates[randi_range(0, _branch_candidates.size() - 1)]
+	_branch_candidates.erase(exit)
+	_dungeon[exit.x][exit.y] = "E"
 
-func is_valid_pos(pos: Vector2i):
+func _generate_room_info() -> void:
+	for slot in _branch_candidates:
+		RoomsDataList.generate_room(slot)
+
+func _print_dungeon() -> void:
+	var dungeon_as_string : String = ""
+	for y in range(dimensions.y - 1, -1, -1):
+		for x in dimensions.x:
+			dungeon_as_string += "[" + str(_dungeon[x][y]) + "]"
+		dungeon_as_string += "\n"
+	print(dungeon_as_string)
+
+
+
+func register_player() -> void:
+	_current_room = start
+
+func is_valid_pos(pos: Vector2i) -> bool:
 	return (pos.x >= 0 and pos.x < dimensions.x and 
 			pos.y >= 0 and pos.y < dimensions.y)
 
