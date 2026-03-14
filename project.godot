@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PersistentRoomData="*uid://d2m5qdbyx2om1"
 PlayerTracker="*uid://bq7oj5lbp2sb2"
 DungeonGenerator="*uid://dnqwucvnbdy8m"
+GlobalVariables="*uid://hdx4srnd3tyu"
 
 [display]
 
