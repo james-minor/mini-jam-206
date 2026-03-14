@@ -57,3 +57,7 @@ func _on_collapse_timer_timeout() -> void:
 	
 	if _destruction_queue.size() > 0:
 		set_cells_terrain_connect([_destruction_queue.pop_front()], 0, 0)
+
+
+func _on_player_enter_door() -> void:
+	PersistentRoomData.room_data[PlayerTracker.current_room] = tile_map_data

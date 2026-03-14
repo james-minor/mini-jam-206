@@ -1,6 +1,8 @@
 class_name DungeonRoomDoor
 extends Node2D
 
+signal player_entered()
+
 @export
 var direction: Vector2i = Vector2i.UP
 
@@ -31,9 +33,12 @@ func _on_player_monitor_body_entered(body: Node2D) -> void:
 	if body is not Player:
 		return
 	
+	player_entered.emit()
+	
 	PlayerTracker.entering_direction = direction
 	
 	PlayerTracker.current_room += direction
 	var new_room_packed_scene: PackedScene = DungeonGenerator.get_room_file(PlayerTracker.current_room)
+	
 	
 	get_tree().call_deferred("change_scene_to_packed", new_room_packed_scene)
