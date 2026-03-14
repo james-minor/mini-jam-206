@@ -25,6 +25,9 @@ animation = &"struggle"
 [node name="WorldCollider" type="CollisionShape2D" parent="." unique_id=606334778]
 shape = SubResource("RectangleShape2D_cwlon")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=297139905]
+unique_name_in_owner = true
+
 [node name="EnemyStateMachine" type="Node" parent="." unique_id=1823030480]
 script = ExtResource("2_cwlon")
 

@@ -381,6 +381,7 @@ texture = ExtResource("1_m8yiu")
 11:3/0/terrains_peering_bit/left_side = 0
 11:3/0/terrains_peering_bit/top_left_corner = 0
 11:3/0/terrains_peering_bit/top_side = 0
+10:1/0 = 0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_m8yiu"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
@@ -423,7 +424,7 @@ texture = ExtResource("2_coh21")
 1:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
 2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:3/next_alternative_id = 2
+3:3/next_alternative_id = 3
 3:3/0 = 0
 3:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_m8yiu")
 3:3/1 = 1

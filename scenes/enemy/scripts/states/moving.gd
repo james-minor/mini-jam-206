@@ -1,9 +1,8 @@
 extends EnemyState
-#extends CharacterBody2D
 
 
-var movement_speed: float = 200.0
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+var movement_speed: float = 50.0
+@onready var navigation_agent: NavigationAgent2D = %NavigationAgent2D
 
 
 func _ready():
@@ -13,7 +12,11 @@ func _ready():
 	navigation_agent.target_desired_distance = 2.0
 	navigation_agent.debug_enabled = true
 	set_movement_target(GlobalVariables.player_position)
+	
 
+func _process(_delta: float):
+	#TODO: moving this to a .1 second timer or something could be better; every frame may just be too much
+	set_movement_target(GlobalVariables.player_position)
 
 
 func set_movement_target(movement_target: Vector2):
