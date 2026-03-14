@@ -27,15 +27,21 @@ cacti.
 The player can carry one weapon in addition to their lasso. These weapons can be
 used with the **Space** key. Weapons may be found randomly throughout the game world.
 
-## Bottle
+## Bottle - zp
 
 The player can throw a relatively slow moving bottle that does significant damage.
 
-## Dynamite
+## Dynamite - zp
 
 Area of effect weapon
 
-## Playing cards
+## Playing cards - zp
 
 Ranged weapon that does okay damage, the player throws three of them at once in a 
 scattered pattern
+
+## Dungeon Generation - zp
+
+Prefabbed rooms should be selected at random when a user enters a room. These 
+should be persistent. 
+Data structure for paths between rooms with an api to get 
