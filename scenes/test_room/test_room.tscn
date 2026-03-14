@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtan4gxcn8dmm" path="res://scenes/test_room/room_concept.png" id="1_x3t7u"]
 [ext_resource type="PackedScene" uid="uid://cg65kwkxenppq" path="res://scenes/player/player.tscn" id="2_35u8j"]
-[ext_resource type="SpriteFrames" uid="uid://c48dso2dfwf3w" path="res://scenes/enemy/enemy_sprite_frames.tres" id="3_35u8j"]
+[ext_resource type="PackedScene" uid="uid://bfyhqmbrvenwi" path="res://scenes/enemy/enemy.tscn" id="3_35u8j"]
 
 [node name="TestRoom" type="Node2D" unique_id=1463470593]
 
@@ -14,8 +14,5 @@ process_callback = 0
 
 [node name="Player" parent="." unique_id=1087271331 instance=ExtResource("2_35u8j")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=168608893]
-position = Vector2(50, 4)
-sprite_frames = ExtResource("3_35u8j")
-animation = &"struggle"
-frame_progress = 0.99995583
+[node name="Enemy" parent="." unique_id=796925542 instance=ExtResource("3_35u8j")]
+position = Vector2(64, 27)
