@@ -16,6 +16,9 @@ var _pit_timer: float = 0.0
 var _destruction_queue: Array[Vector2i] = []
 
 
+func _ready() -> void:
+	if PersistentRoomData.room_data.has(PlayerTracker.current_room):
+		tile_map_data = PersistentRoomData.room_data[PlayerTracker.current_room]
 
 
 func _physics_process(delta: float) -> void:
