@@ -7,7 +7,7 @@ extends Node2D
 @export var branch_length : Vector2i = Vector2i(1, 4)
 var _branch_candidates : Array[Vector2i]
 var _current_room : Vector2i
-var dungeon : Array
+var _dungeon : Array
 
 
 func _ready() -> void:
@@ -21,15 +21,15 @@ func _ready() -> void:
 
 func _initialize_dungeon() -> void:
 	for x in dimensions.x:
-		dungeon.append([])
+		_dungeon.append([])
 		for y in dimensions.y:
-			dungeon[x].append(0)
+			_dungeon[x].append(0)
 			
 func _print_dungeon() -> void:
 	var dungeon_as_string : String = ""
 	for y in range(dimensions.y - 1, -1, -1):
 		for x in dimensions.x:
-			dungeon_as_string += "[" + str(dungeon[x][y]) + "]"
+			dungeon_as_string += "[" + str(_dungeon[x][y]) + "]"
 		dungeon_as_string += "\n"
 	print(dungeon_as_string)
 
@@ -38,12 +38,12 @@ func _place_entrance() -> void:
 		start.x = randi_range(0, dimensions.x - 1)
 	if start.y < 0 or start.y >= dimensions.y:
 		start.y = randi_range(0, dimensions.y - 1)
-	dungeon[start.x][start.y] = "S"
+	_dungeon[start.x][start.y] = "S"
 
 func _place_exit() -> void:
 	var exit = _branch_candidates[randi_range(0, _branch_candidates.size() - 1)]
 	_branch_candidates.erase(exit)
-	dungeon[exit.x][exit.y] = "E"
+	_dungeon[exit.x][exit.y] = "E"
 
 func _generate_critical_path(current: Vector2i, length: int, room_type: String) -> bool:
 	if (length == 0): 
@@ -62,16 +62,16 @@ func _generate_critical_path(current: Vector2i, length: int, room_type: String) 
 		3:
 			direction = Vector2i.LEFT
 	for i in 4:
-		if (is_valid_pos(current + direction) and not dungeon[current.x + direction.x][current.y + direction.y]):
+		if (is_valid_pos(current + direction) and not _dungeon[current.x + direction.x][current.y + direction.y]):
 			current += direction
 			if length > 1:
-				dungeon[current.x][current.y] = room_type
+				_dungeon[current.x][current.y] = room_type
 			_branch_candidates.append(current)
 			if _generate_critical_path(current, length - 1, room_type):
 				return true
 			else:
 				_branch_candidates.erase(current)
-				dungeon[current.x][current.y] = 0
+				_dungeon[current.x][current.y] = 0
 				current -= direction
 		direction = Vector2(direction.y, -direction.x)
 	return false
@@ -96,7 +96,7 @@ func is_valid_pos(pos: Vector2i):
 
 func move_room(direction: Vector2i):
 	var new_pos: Vector2i = _current_room + direction 
-	if (is_valid_pos(new_pos) and dungeon[new_pos.x][new_pos.y]):
+	if (is_valid_pos(new_pos) and _dungeon[new_pos.x][new_pos.y]):
 		_current_room = new_pos
 
 func get_current_room() -> Vector2i:
@@ -106,4 +106,4 @@ func get_current_room_info():
 	return get_room_info(_current_room)
 
 func get_room_info(room: Vector2i):
-	return dungeon[room.x][room.y]
+	return _dungeon[room.x][room.y]
