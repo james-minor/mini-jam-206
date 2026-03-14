@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://b14go7akls5u4"]
+
+[ext_resource type="Script" uid="uid://c468etv12rbln" path="res://scenes/room_door/room_door.gd" id="1_j285e"]
+[ext_resource type="Texture2D" uid="uid://36o158vlsy18" path="res://scenes/room_door/dungeon_room_door_sprite.png" id="2_sgykf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgykf"]
+size = Vector2(16, 16)
+
+[node name="RoomDoor" type="Node2D" unique_id=540423818]
+script = ExtResource("1_j285e")
+
+[node name="DoorSprite" type="Sprite2D" parent="." unique_id=1263187164]
+unique_name_in_owner = true
+z_index = -1
+texture = ExtResource("2_sgykf")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="PlayerMonitor" type="Area2D" parent="." unique_id=747433251]
+unique_name_in_owner = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerMonitor" unique_id=1875560936]
+shape = SubResource("RectangleShape2D_sgykf")
+
+[connection signal="body_entered" from="PlayerMonitor" to="." method="_on_player_monitor_body_entered"]

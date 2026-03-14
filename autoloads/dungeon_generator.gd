@@ -15,6 +15,9 @@ enum RoomType {
 	EXIT,
 }
 
+@export
+var room_variations: Array[PackedScene] = []
+
 ## Size of the dungeon floor map.
 const DIMENSIONS: Vector2i = Vector2i(10, 5)
 
@@ -32,7 +35,11 @@ var branch_length: Vector2i = Vector2i(1, 4)
 
 var _branch_candidates: Array[Vector2i]
 
-var _dungeon: Array[RoomType] = []
+## Internal array that contains the RoomType for a generated room.
+var _floor_room_types: Array[RoomType] = []
+
+## Internal array that contains the PackedScene for a generated room.
+var _floor_room_files: Array[PackedScene] = []
 
 
 func _ready() -> void:
@@ -45,20 +52,29 @@ func _to_string() -> String:
 	
 	for y in range(DIMENSIONS.y):
 		for x in range(DIMENSIONS.x):
-			output += " %d " % get_room_data(Vector2i(x, y))
+			output += " %d " % get_room_type(Vector2i(x, y))
 		output += "\n"
 	
 	return output
 
 
-## Helper function that returns the data in the dungeon array for a specific room position.
-func get_room_data(position: Vector2i) -> RoomType:
-	return _dungeon[_convert_position_to_index(position)]
+## Helper function that returns the RoomType for a specific room position.
+func get_room_type(position: Vector2i) -> RoomType:
+	return _floor_room_types[_convert_position_to_index(position)]
 
 
-## Helper function that sets the data for a room.
-func set_room_data(position: Vector2i, value: RoomType) -> void:
-	_dungeon[_convert_position_to_index(position)] = value
+## Helper function that sets the RoomType for a room.
+func set_room_type(position: Vector2i, value: RoomType) -> void:
+	_floor_room_types[_convert_position_to_index(position)] = value
+
+
+## Helper function that returns the PackedScene for specific room position.
+func get_room_file(position: Vector2i) -> PackedScene:
+	return _floor_room_files[_convert_position_to_index(position)]
+
+## Helper function that sets PackedScene for a room.
+func set_room_file(position: Vector2i, value: PackedScene) -> void:
+	_floor_room_files[_convert_position_to_index(position)] = value
 
 
 ## Returns true if the passed position is within the bounds of the floor DIMENSIONS.
@@ -85,11 +101,13 @@ func _convert_position_to_index(position: Vector2i) -> int:
 
 
 func _initialize_dungeon() -> void:
-	_dungeon = []
+	_floor_room_types = []
+	_floor_room_files = []
 	
 	for x in DIMENSIONS.x:
 		for y in DIMENSIONS.y:
-			_dungeon.append(RoomType.EMPTY)
+			_floor_room_types.append(RoomType.EMPTY)
+			_floor_room_files.append(room_variations.pick_random())
 
 
 func _place_entrance() -> void:
@@ -97,7 +115,7 @@ func _place_entrance() -> void:
 		entrance_position.x = randi_range(0, DIMENSIONS.x - 1)
 		entrance_position.y = randi_range(0, DIMENSIONS.y - 1)
 	
-	set_room_data(Vector2i(entrance_position.x, entrance_position.y), RoomType.START)
+	set_room_type(Vector2i(entrance_position.x, entrance_position.y), RoomType.START)
 
 
 func _generate_critical_path(current: Vector2i, length: int, room_type: RoomType) -> bool:
@@ -111,16 +129,16 @@ func _generate_critical_path(current: Vector2i, length: int, room_type: RoomType
 	var direction : Vector2i = possible_directions[randi_range(0, 3)]
 	
 	for i in 4:
-		if is_valid_position(current + direction) and get_room_data(Vector2i(current.x + direction.x, current.y + direction.y)) == RoomType.EMPTY:
+		if is_valid_position(current + direction) and get_room_type(Vector2i(current.x + direction.x, current.y + direction.y)) == RoomType.EMPTY:
 			current += direction
 			if length > 1:
-				set_room_data(Vector2i(current.x, current.y), room_type)
+				set_room_type(Vector2i(current.x, current.y), room_type)
 			_branch_candidates.append(current)
 			if _generate_critical_path(current, length - 1, room_type):
 				return true
 			else:
 				_branch_candidates.erase(current)
-				set_room_data(Vector2i(current.x, current.y), RoomType.EMPTY)
+				set_room_type(Vector2i(current.x, current.y), RoomType.EMPTY)
 				current -= direction
 		direction = Vector2(direction.y, -direction.x)
 	
@@ -141,4 +159,4 @@ func _generate_branch() -> void:
 func _place_exit() -> void:
 	var exit = _branch_candidates[randi_range(0, _branch_candidates.size() - 1)]
 	_branch_candidates.erase(exit)
-	set_room_data(Vector2i(exit.x, exit.y), RoomType.EXIT)
+	set_room_type(Vector2i(exit.x, exit.y), RoomType.EXIT)
