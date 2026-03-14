@@ -15,14 +15,16 @@ size = Vector2(14, 14)
 size = Vector2(8, 7)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1201719158]
+collision_layer = 5
 script = ExtResource("1_cwlon")
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="." unique_id=468463512]
 unique_name_in_owner = true
 sprite_frames = ExtResource("1_gl05p")
-animation = &"struggle"
+animation = &"move_down"
 
 [node name="WorldCollider" type="CollisionShape2D" parent="." unique_id=606334778]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_cwlon")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=297139905]
@@ -48,9 +50,17 @@ script = ExtResource("7_4efjx")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
 [node name="DeathColliderDetector" type="Area2D" parent="." unique_id=1774818799]
+position = Vector2(0, 2)
 collision_layer = 0
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathColliderDetector" unique_id=282041236]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_gl05p")
+
+[node name="Timer" type="Timer" parent="." unique_id=634237988]
+wait_time = 0.4
+autostart = true
+
+[connection signal="body_entered" from="DeathColliderDetector" to="EnemyStateMachine/Moving" method="_on_death_collider_detector_body_entered"]
+[connection signal="timeout" from="Timer" to="EnemyStateMachine/Moving" method="_on_timer_timeout"]
