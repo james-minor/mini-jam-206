@@ -42,13 +42,12 @@ func _ready() -> void:
 
 func _to_string() -> String:
 	var output: String = ""
-	for y in range(DIMENSIONS.y - 1, -1, -1):
-		for x in DIMENSIONS.x:
-			if get_room_data(Vector2i(x, y)) == RoomType.EMPTY:
-				output += "[ ]"
-			else:
-				output += "[" + str(get_room_data(Vector2i(x, y))) + "]"
+	
+	for y in range(DIMENSIONS.y):
+		for x in range(DIMENSIONS.x):
+			output += " %d " % get_room_data(Vector2i(x, y))
 		output += "\n"
+	
 	return output
 
 
@@ -60,6 +59,12 @@ func get_room_data(position: Vector2i) -> RoomType:
 ## Helper function that sets the data for a room.
 func set_room_data(position: Vector2i, value: RoomType) -> void:
 	_dungeon[_convert_position_to_index(position)] = value
+
+
+## Returns true if the passed position is within the bounds of the floor DIMENSIONS.
+func is_valid_position(position: Vector2i) -> bool:
+	return (position.x >= 0 and position.x < DIMENSIONS.x and 
+			position.y >= 0 and position.y < DIMENSIONS.y)
 
 
 ## Generates a dungeon floor.
@@ -88,7 +93,7 @@ func _initialize_dungeon() -> void:
 
 
 func _place_entrance() -> void:
-	if not _is_valid_position(entrance_position):
+	if not is_valid_position(entrance_position):
 		entrance_position.x = randi_range(0, DIMENSIONS.x - 1)
 		entrance_position.y = randi_range(0, DIMENSIONS.y - 1)
 	
@@ -106,7 +111,7 @@ func _generate_critical_path(current: Vector2i, length: int, room_type: RoomType
 	var direction : Vector2i = possible_directions[randi_range(0, 3)]
 	
 	for i in 4:
-		if _is_valid_position(current + direction) and get_room_data(Vector2i(current.x + direction.x, current.y + direction.y)) == RoomType.EMPTY:
+		if is_valid_position(current + direction) and get_room_data(Vector2i(current.x + direction.x, current.y + direction.y)) == RoomType.EMPTY:
 			current += direction
 			if length > 1:
 				set_room_data(Vector2i(current.x, current.y), room_type)
@@ -137,9 +142,3 @@ func _place_exit() -> void:
 	var exit = _branch_candidates[randi_range(0, _branch_candidates.size() - 1)]
 	_branch_candidates.erase(exit)
 	set_room_data(Vector2i(exit.x, exit.y), RoomType.EXIT)
-
-
-# Returns true if the passed position is within the bounds of the floor DIMENSIONS.
-func _is_valid_position(position: Vector2i) -> bool:
-	return (position.x >= 0 and position.x < DIMENSIONS.x and 
-			position.y >= 0 and position.y < DIMENSIONS.y)
