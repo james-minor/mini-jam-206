@@ -15,6 +15,8 @@ var current_room: Vector2i :
 var current_floor: int = 1 :
 	set = _set_current_floor
 
+var entering_direction: Vector2i = Vector2.DOWN
+
 
 func _ready() -> void:
 	DungeonGenerator.generation_complete.connect(_on_floor_generation_complete)

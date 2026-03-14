@@ -31,6 +31,8 @@ func _on_player_monitor_body_entered(body: Node2D) -> void:
 	if body is not Player:
 		return
 	
+	PlayerTracker.entering_direction = direction
+	
 	PlayerTracker.current_room += direction
 	var new_room_packed_scene: PackedScene = DungeonGenerator.get_room_file(PlayerTracker.current_room)
 	
