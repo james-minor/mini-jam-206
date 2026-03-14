@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bbh3244y2nfuk"]
-
-[ext_resource type="Script" uid="uid://hghf7sduem5" path="res://rooms_data_list.gd" id="1_4okrl"]
-
-[node name="RoomsDataList" type="Node" unique_id=2089274460]
-script = ExtResource("1_4okrl")

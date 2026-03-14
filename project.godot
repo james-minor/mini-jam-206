@@ -17,8 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Dungeon="*uid://dnrygbcgvm5qc"
-RoomsDataList="*uid://hghf7sduem5"
+DungeonGenerator="*uid://dnrygbcgvm5qc"
+PersistentRoomData="*uid://d2m5qdbyx2om1"
+PlayerTracker="*uid://bq7oj5lbp2sb2"
 
 [display]
 
