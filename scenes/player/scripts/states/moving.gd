@@ -5,6 +5,10 @@ extends PlayerState
 var move_speed: float
 
 
+func on_enter_state() -> void:
+	print("Moving :)")
+
+
 func input_state(event: InputEvent) -> void:
 	if event.is_action_pressed("move_down"):
 		%PlayerSprite.animation = "move_down"
@@ -15,6 +19,12 @@ func input_state(event: InputEvent) -> void:
 	if event.is_action_pressed("move_left"):
 		%PlayerSprite.animation = "move_left"
 	
+	if event.is_action_pressed("lasso_pull_self"):
+		print("Lassoing towards an object.")
+		transition_to("dead")
+	if event.is_action_pressed("lasso_pull_other"):
+		%LassoHandler.lasso_to_object()
+
 
 func physics_process_state(_delta: float) -> void:
 	var input_vector: Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")

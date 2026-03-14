@@ -68,6 +68,7 @@ punch_enemy={
 
 2d_physics/layer_3="World Environment"
 2d_physics/layer_4="Death Collider"
+2d_physics/layer_5="Lasso Target"
 
 [physics]
 

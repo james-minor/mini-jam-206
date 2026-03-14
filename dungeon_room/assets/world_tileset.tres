@@ -385,6 +385,7 @@ texture = ExtResource("1_m8yiu")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lywq"]
 texture = ExtResource("2_coh21")
 0:2/0 = 0
+0:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
@@ -401,15 +402,20 @@ texture = ExtResource("2_coh21")
 2:3/0 = 0
 2:3/0/custom_data_0 = true
 1:2/0 = 0
+1:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
+2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
 3:3/0/custom_data_0 = true
+0:4/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 4
-physics_layer_0/collision_mask = 4
+physics_layer_0/collision_mask = 0
 physics_layer_1/collision_layer = 8
-physics_layer_1/collision_mask = 8
+physics_layer_1/collision_mask = 0
+physics_layer_2/collision_layer = 16
+physics_layer_2/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Death Pit"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
