@@ -9,7 +9,9 @@ var _branch_candidates : Array[Vector2i]
 var _player_room : Vector2i
 var dungeon : Array
 
+
 func _ready() -> void:
+	# TODO: Clear dictionary on floor exit
 	_initialize_dungeon()
 	_place_entrance()
 	_generate_critical_path(_start, _critical_path_length, "m")
@@ -43,6 +45,10 @@ func _place_exit() -> void:
 	_branch_candidates.erase(exit)
 	dungeon[exit.x][exit.y] = "E"
 
+func is_valid_pos(pos: Vector2i):
+	return (pos.x >= 0 and pos.x < _dimensions.x and 
+			pos.y >= 0 and pos.y < _dimensions.y)
+
 func _generate_critical_path(current: Vector2i, length: int, room_type: String) -> bool:
 	if (length == 0): 
 		return true
@@ -60,9 +66,7 @@ func _generate_critical_path(current: Vector2i, length: int, room_type: String) 
 		3:
 			direction = Vector2i.LEFT
 	for i in 4:
-		if (current.x + direction.x >= 0 and current.x + direction.x < _dimensions.x and
-			current.y + direction.y >= 0 and current.y + direction.y < _dimensions.y and 
-			not dungeon[current.x + direction.x][current.y + direction.y]):
+		if (is_valid_pos(current + direction) and not dungeon[current.x + direction.x][current.y + direction.y]):
 			current += direction
 			if length > 1:
 				dungeon[current.x][current.y] = room_type
@@ -86,11 +90,20 @@ func _generate_branch() -> void:
 		else:
 			_branch_candidates.erase(candidate)
 
-func _register_player():
+func register_player():
 	_player_room = _start
+	
+	
+func move_room(direction: Vector2i):
+	var new_pos: Vector2i = _player_room + direction 
+	if (is_valid_pos(new_pos) and dungeon[new_pos.x][new_pos.y]):
+		_player_room = new_pos
 
-func _get_current_room_info():
+func get_current_room() -> Vector2i:
+	return _player_room
+	
+func get_current_room_info():
 	return get_room_info(_player_room)
 
-func _get_room_info(room: Vector2i):
-	pass
+func get_room_info(room: Vector2i):
+	return dungeon[room.x][room.y]

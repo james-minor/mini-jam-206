@@ -4,8 +4,3 @@
 
 [node name="Dungeon" type="Node2D" unique_id=879915878]
 script = ExtResource("1_6elmv")
-_dimensions = null
-_start = null
-_critical_path_length = null
-_branches = null
-_branch_length = null
