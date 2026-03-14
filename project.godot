@@ -15,6 +15,11 @@ run/main_scene="uid://dimspskafgniy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Dungeon="*uid://dnrygbcgvm5qc"
+RoomsDataList="*uid://hghf7sduem5"
+
 [display]
 
 window/size/viewport_width=480
@@ -79,3 +84,4 @@ common/physics_interpolation=true
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(1, 0.9647059, 0.827451, 1)
