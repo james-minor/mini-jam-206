@@ -20,6 +20,9 @@ func input_state(event: InputEvent) -> void:
 		transition_to("dead")
 	if event.is_action_pressed("lasso_pull_other"):
 		%LassoHandler.lasso_to_object()
+	
+	if event.is_action_pressed("move_dash"):
+		transition_to("dashing")
 
 
 func physics_process_state(_delta: float) -> void:

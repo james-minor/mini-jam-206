@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://pqu0wrqodb61" path="res://scenes/player/assets/lasso_sprite.png" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://c6kmtrrfsy8gx" path="res://scenes/player/scripts/states/dead.gd" id="8_5gtgg"]
 [ext_resource type="Script" uid="uid://q7dxkx1eklm1" path="res://scenes/player/lasso_line.gd" id="8_qek5x"]
+[ext_resource type="Script" uid="uid://bpcshexn5mkcg" path="res://scenes/player/scripts/states/dashing.gd" id="9_h17s1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
 size = Vector2(14, 14)
@@ -57,6 +58,9 @@ metadata/_custom_type_script = "uid://br4i28vonmgp4"
 [node name="Dead" type="Node" parent="StateMachine" unique_id=950108495]
 script = ExtResource("8_5gtgg")
 metadata/_custom_type_script = "uid://c6kmtrrfsy8gx"
+
+[node name="Dashing" type="Node" parent="StateMachine" unique_id=1436026784]
+script = ExtResource("9_h17s1")
 
 [node name="LassoHandler" type="Node2D" parent="." unique_id=1407172873]
 unique_name_in_owner = true
