@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bfyhqmbrvenwi"]
+
+[ext_resource type="SpriteFrames" uid="uid://c48dso2dfwf3w" path="res://scenes/enemy/enemy_sprite_frames.tres" id="1_gl05p"]
+[ext_resource type="Script" uid="uid://s5yd6rxphgmq" path="res://scripts/state_machine.gd" id="2_cwlon"]
+[ext_resource type="Script" uid="uid://cykgmdrwt0qkx" path="res://scenes/player/scripts/states/moving.gd" id="3_nbhyu"]
+[ext_resource type="Script" uid="uid://d0enuubth700m" path="res://scenes/player/scripts/states/lasso_dash.gd" id="4_13gj6"]
+[ext_resource type="Script" uid="uid://c6kmtrrfsy8gx" path="res://scenes/player/scripts/states/dead.gd" id="5_4efjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwlon"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl05p"]
+size = Vector2(8, 7)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1201719158]
+
+[node name="EnemySprite" type="AnimatedSprite2D" parent="." unique_id=468463512]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_gl05p")
+animation = &"move_down"
+
+[node name="WorldCollider" type="CollisionShape2D" parent="." unique_id=606334778]
+shape = SubResource("RectangleShape2D_cwlon")
+
+[node name="StateMachine" type="Node" parent="." unique_id=822240290 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
+script = ExtResource("2_cwlon")
+initial_state = NodePath("Moving")
+
+[node name="Moving" type="Node" parent="StateMachine" unique_id=1346384892]
+script = ExtResource("3_nbhyu")
+move_speed = 77.0
+metadata/_custom_type_script = "uid://cykgmdrwt0qkx"
+
+[node name="LassoDash" type="Node" parent="StateMachine" unique_id=1481209486]
+script = ExtResource("4_13gj6")
+metadata/_custom_type_script = "uid://br4i28vonmgp4"
+
+[node name="Dead" type="Node" parent="StateMachine" unique_id=303781719]
+script = ExtResource("5_4efjx")
+metadata/_custom_type_script = "uid://c6kmtrrfsy8gx"
+
+[node name="DeathColliderDetector" type="Area2D" parent="." unique_id=1774818799]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathColliderDetector" unique_id=282041236]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_gl05p")
