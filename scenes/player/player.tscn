@@ -34,7 +34,7 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("1_oul6g")
 animation = &"die"
 autoplay = "die"
-frame_progress = 0.9880134
+frame_progress = 0.5072269
 
 [node name="WorldCollider" type="CollisionShape2D" parent="." unique_id=1424195601]
 position = Vector2(0, 1)
@@ -61,7 +61,8 @@ metadata/_custom_type_script = "uid://c6kmtrrfsy8gx"
 [node name="LassoHandler" type="Node2D" parent="." unique_id=1407172873]
 unique_name_in_owner = true
 script = ExtResource("5_p47bc")
-lasso_speed = 250.0
+max_lasso_length = 150.0
+lasso_speed = 325.0
 
 [node name="DeathColliderDetector" type="Area2D" parent="." unique_id=1553762625]
 collision_layer = 0
