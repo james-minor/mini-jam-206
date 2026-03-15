@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c468etv12rbln" path="res://scenes/room_door/room_door.gd" id="1_j285e"]
 [ext_resource type="Texture2D" uid="uid://36o158vlsy18" path="res://scenes/room_door/dungeon_room_door_sprite.png" id="2_sgykf"]
+[ext_resource type="AudioStream" uid="uid://djx2x1f34kcfe" path="res://scenes/room_door/door_opened.wav" id="3_uhmmo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgykf"]
 size = Vector2(16, 16)
@@ -22,5 +23,10 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerMonitor" unique_id=1875560936]
 shape = SubResource("RectangleShape2D_sgykf")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="." unique_id=121830504]
+unique_name_in_owner = true
+stream = ExtResource("3_uhmmo")
+volume_db = -10.0
 
 [connection signal="body_entered" from="PlayerMonitor" to="." method="_on_player_monitor_body_entered"]

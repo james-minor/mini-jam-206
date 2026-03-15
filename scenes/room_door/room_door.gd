@@ -35,6 +35,10 @@ func _on_player_monitor_body_entered(body: Node2D) -> void:
 	
 	player_entered.emit()
 	
+	%AudioPlayer.pitch_scale = randf_range(0.9, 1.1)
+	%AudioPlayer.play()
+	await %AudioPlayer.finished
+	
 	PlayerTracker.entering_direction = direction
 	
 	PlayerTracker.current_room += direction
