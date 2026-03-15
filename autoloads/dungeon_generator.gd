@@ -18,6 +18,10 @@ enum RoomType {
 @export
 var room_variations: Array[PackedScene] = []
 
+@export
+var run_seed: int = 0
+
+
 ## Size of the dungeon floor map.
 const DIMENSIONS: Vector2i = Vector2i(10, 5)
 
@@ -25,7 +29,7 @@ const DIMENSIONS: Vector2i = Vector2i(10, 5)
 var entrance_position: Vector2i = Vector2i(-1, -1)
 
 ## The shortest possible path the player can take from the floor entrance to exit.
-var critical_path_length: int = 3
+var critical_path_length: int = 13
 
 ## Number of branching paths that can be created off of the critical path.
 var branches: int = 3
@@ -42,7 +46,9 @@ var _floor_room_types: Array[RoomType] = []
 var _floor_room_files: Array[PackedScene] = []
 
 
+
 func _ready() -> void:
+	seed(run_seed)
 	generate_floor()
 
 

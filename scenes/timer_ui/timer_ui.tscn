@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://fjfalfdx5t15"]
+
+[ext_resource type="Script" uid="uid://boekqlywe03qy" path="res://scenes/timer_ui/timer_ui.gd" id="1_hel6x"]
+[ext_resource type="FontFile" uid="uid://cbkqnj532nd23" path="res://scenes/timer_ui/orange_kid_font.otf" id="2_ll2t2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hel6x"]
+font = ExtResource("2_ll2t2")
+font_size = 12
+font_color = Color(0.4862745, 0.24705882, 0.34509805, 1)
+
+[node name="TimerUi" type="Control" unique_id=1189747434]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hel6x")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=513193315]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_hel6x")
+horizontal_alignment = 1

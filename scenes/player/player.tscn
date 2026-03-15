@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dun4dnd4kapso" path="res://scenes/player/scripts/player.gd" id="1_g1dw6"]
 [ext_resource type="SpriteFrames" uid="uid://fpx0h3t24vl6" path="res://scenes/player/assets/player_sprite_frames.tres" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://cu120ao6atykf" path="res://scenes/player/scripts/throw_indicator.gd" id="4_fcs02"]
 [ext_resource type="Script" uid="uid://cykgmdrwt0qkx" path="res://scenes/player/scripts/states/moving.gd" id="4_qjkh3"]
 [ext_resource type="Script" uid="uid://s5yd6rxphgmq" path="res://scripts/state_machine.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://d0enuubth700m" path="res://scenes/player/scripts/states/lasso_dash.gd" id="5_75vfm"]
+[ext_resource type="Texture2D" uid="uid://d4lnpgs3arx27" path="res://scenes/player/assets/throw_indicator.png" id="5_myrg7"]
 [ext_resource type="Script" uid="uid://dn3x6p66r72av" path="res://scenes/player/lasso_handler.gd" id="5_p47bc"]
 [ext_resource type="Texture2D" uid="uid://pqu0wrqodb61" path="res://scenes/player/assets/lasso_sprite.png" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://c6kmtrrfsy8gx" path="res://scenes/player/scripts/states/dead.gd" id="8_5gtgg"]
 [ext_resource type="Script" uid="uid://q7dxkx1eklm1" path="res://scenes/player/lasso_line.gd" id="8_qek5x"]
 [ext_resource type="Script" uid="uid://bpcshexn5mkcg" path="res://scenes/player/scripts/states/dashing.gd" id="9_h17s1"]
+[ext_resource type="Script" uid="uid://bsmu67cohpfah" path="res://scenes/player/scripts/states/holding_enemy.gd" id="10_gx1jg"]
 [ext_resource type="AudioStream" uid="uid://d11e8c2tg8bvt" path="res://scenes/player/assets/invalid_lasso_target.wav" id="11_je7p5"]
 [ext_resource type="AudioStream" uid="uid://b2sglpd0ft0em" path="res://scenes/player/assets/successful_lasso.wav" id="12_fm80t"]
 
@@ -20,7 +23,7 @@ size = Vector2(12, 12)
 size = Vector2(8, 7)
 
 [node name="Player" type="CharacterBody2D" unique_id=1087271331]
-collision_mask = 20
+collision_mask = 4
 script = ExtResource("1_g1dw6")
 
 [node name="LassoLine" type="Line2D" parent="." unique_id=1224897950]
@@ -31,6 +34,16 @@ width = 3.0
 texture = ExtResource("7_0owmy")
 texture_mode = 1
 script = ExtResource("8_qek5x")
+
+[node name="ThrowIndicator" type="Node2D" parent="." unique_id=2071854826]
+unique_name_in_owner = true
+visible = false
+rotation = 3.5081117
+script = ExtResource("4_fcs02")
+
+[node name="ThrowIndicatorSprite" type="Sprite2D" parent="ThrowIndicator" unique_id=1557894816]
+position = Vector2(15, 0)
+texture = ExtResource("5_myrg7")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="." unique_id=1533129528]
 unique_name_in_owner = true
@@ -63,6 +76,11 @@ metadata/_custom_type_script = "uid://c6kmtrrfsy8gx"
 
 [node name="Dashing" type="Node" parent="StateMachine" unique_id=1436026784]
 script = ExtResource("9_h17s1")
+
+[node name="HoldingEnemy" type="Node" parent="StateMachine" unique_id=441278778]
+unique_name_in_owner = true
+script = ExtResource("10_gx1jg")
+throw_power = 350.0
 
 [node name="LassoHandler" type="Node2D" parent="." unique_id=1407172873]
 unique_name_in_owner = true
