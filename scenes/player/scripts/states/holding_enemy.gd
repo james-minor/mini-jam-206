@@ -18,7 +18,7 @@ func _ready() -> void:
 
 func on_enter_state() -> void:
 	%LassoLine.visible = true
-	_hold_timer.start(2)
+	_hold_timer.start(1)
 
 
 func input_state(event: InputEvent) -> void:
@@ -34,6 +34,7 @@ func input_state(event: InputEvent) -> void:
 func process_state(delta: float) -> void:
 	if held_enemy.global_position.distance_to(player.global_position) < 15:
 		%ThrowIndicator.visible = true
+		_hold_timer.stop()
 	
 	%LassoLine.target_position = held_enemy.global_position
 
