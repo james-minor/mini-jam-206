@@ -46,12 +46,6 @@ var _floor_room_types: Array[RoomType] = []
 var _floor_room_files: Array[PackedScene] = []
 
 
-
-func _ready() -> void:
-	seed(run_seed)
-	generate_floor()
-
-
 func _to_string() -> String:
 	var output: String = ""
 	
