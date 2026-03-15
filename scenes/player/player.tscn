@@ -67,6 +67,7 @@ script = ExtResource("9_h17s1")
 [node name="LassoHandler" type="Node2D" parent="." unique_id=1407172873]
 unique_name_in_owner = true
 script = ExtResource("5_p47bc")
+min_lasso_length = 30.0
 max_lasso_length = 150.0
 lasso_speed = 325.0
 
