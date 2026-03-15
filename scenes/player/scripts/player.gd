@@ -1,7 +1,6 @@
 class_name Player
 extends CharacterBody2D
 
-
 func _ready() -> void:
 	match PlayerTracker.entering_direction:
 		Vector2i.DOWN:
@@ -15,3 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	GlobalVariables.player_position = global_position
+
+
+func damage() -> void:
+	print("damage")

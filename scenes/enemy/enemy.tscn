@@ -4,6 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c48dso2dfwf3w" path="res://scenes/enemy/enemy_sprite_frames.tres" id="1_gl05p"]
 [ext_resource type="Script" uid="uid://s5yd6rxphgmq" path="res://scripts/state_machine.gd" id="2_cwlon"]
 [ext_resource type="Script" uid="uid://d17nxvlrkkve0" path="res://scenes/enemy/scripts/states/moving.gd" id="4_gl05p"]
+[ext_resource type="PackedScene" uid="uid://bfx7ctia5e8ua" path="res://scenes/enemy_bullet/enemy_bullet.tscn" id="5_13gj6"]
 [ext_resource type="Script" uid="uid://cbrmlxdojsmap" path="res://scenes/enemy/scripts/states/dead.gd" id="5_nbhyu"]
 [ext_resource type="Script" uid="uid://8p47vsqol05n" path="res://scenes/enemy/scripts/states/lassoed.gd" id="6_13gj6"]
 [ext_resource type="Script" uid="uid://phvwlvlba8ym" path="res://scenes/enemy/thrown.gd" id="8_13gj6"]
@@ -48,6 +49,7 @@ initial_state = NodePath("Moving")
 
 [node name="Moving" type="Node" parent="StateMachine" unique_id=62941909]
 script = ExtResource("4_gl05p")
+bullet_scene = ExtResource("5_13gj6")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
 [node name="Dead" type="Node" parent="StateMachine" unique_id=1330841031]
