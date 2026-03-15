@@ -23,7 +23,7 @@ var run_seed: int = 0
 
 
 ## Size of the dungeon floor map.
-const DIMENSIONS: Vector2i = Vector2i(10, 5)
+const DIMENSIONS: Vector2i = Vector2i(9, 5)
 
 ## Position of the starting room for the current dungeon floor.
 var entrance_position: Vector2i = Vector2i(-1, -1)
