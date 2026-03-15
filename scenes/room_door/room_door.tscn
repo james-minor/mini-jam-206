@@ -7,6 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgykf"]
 size = Vector2(16, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhmmo"]
+size = Vector2(16, 16)
+
 [node name="RoomDoor" type="Node2D" unique_id=540423818]
 script = ExtResource("1_j285e")
 
@@ -28,5 +31,14 @@ shape = SubResource("RectangleShape2D_sgykf")
 unique_name_in_owner = true
 stream = ExtResource("3_uhmmo")
 volume_db = -10.0
+
+[node name="WallCollider" type="StaticBody2D" parent="." unique_id=1205624460]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallCollider" unique_id=1598321535]
+shape = SubResource("RectangleShape2D_uhmmo")
+debug_color = Color(0.9217859, 0.22814307, 0.41742313, 0.41960785)
 
 [connection signal="body_entered" from="PlayerMonitor" to="." method="_on_player_monitor_body_entered"]

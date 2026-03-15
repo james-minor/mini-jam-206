@@ -20,11 +20,13 @@ func _ready() -> void:
 
 
 func disable() -> void:
+	%WallCollider.collision_layer = 4
 	%DoorSprite.region_rect.position.x = 16
 	%PlayerMonitor.monitoring = false
 
 
 func enable() -> void:
+	%WallCollider.collision_layer = 0
 	%DoorSprite.region_rect.position.x = 0
 	%PlayerMonitor.monitoring = true
 
