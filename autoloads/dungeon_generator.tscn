@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://buc2llukbsr0r" path="res://dungeon_room/variations/dungeon_room_c.tscn" id="4_ccdrg"]
 [ext_resource type="PackedScene" uid="uid://t0dg1ff2el0m" path="res://dungeon_room/variations/dungeon_room_d.tscn" id="5_qvi61"]
 [ext_resource type="PackedScene" uid="uid://bkprpu06cujly" path="res://dungeon_room/variations/dungeon_room_f.tscn" id="6_abi2i"]
+[ext_resource type="PackedScene" uid="uid://bx5tbc53fq0hb" path="res://dungeon_room/variations/dungeon_room_g.tscn" id="7_ccdrg"]
+[ext_resource type="PackedScene" uid="uid://beh7f83a40g0y" path="res://dungeon_room/variations/dungeon_room_h.tscn" id="8_qvi61"]
 
 [node name="DungeonGenerator" type="Node2D" unique_id=1315427423]
 script = ExtResource("1_8ycwe")
-room_variations = Array[PackedScene]([ExtResource("2_abi2i"), ExtResource("3_abi2i"), ExtResource("4_ccdrg"), ExtResource("5_qvi61"), ExtResource("6_abi2i")])
+room_variations = Array[PackedScene]([ExtResource("2_abi2i"), ExtResource("3_abi2i"), ExtResource("4_ccdrg"), ExtResource("5_qvi61"), ExtResource("6_abi2i"), ExtResource("7_ccdrg"), ExtResource("8_qvi61")])
