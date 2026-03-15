@@ -41,7 +41,9 @@ position = Vector2(-136, -24)
 direction = Vector2i(-1, 0)
 
 [node name="Player" parent="." unique_id=1087271331 instance=ExtResource("2_0kuf4")]
-position = Vector2(-9, -16)
+position = Vector2(-176, -128)
+
+[node name="Enemies" type="Node" parent="." unique_id=907243576]
 
 [connection signal="player_entered" from="Doors/NorthDoor" to="TileMapLayer" method="_on_player_entered"]
 [connection signal="player_entered" from="Doors/EastDoor" to="TileMapLayer" method="_on_player_enter_door"]
