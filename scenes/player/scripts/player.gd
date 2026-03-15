@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+var health: int = 10
+
 func _ready() -> void:
 	match PlayerTracker.entering_direction:
 		Vector2i.DOWN:
@@ -17,4 +19,14 @@ func _process(_delta: float) -> void:
 
 
 func damage() -> void:
-	print("damage")
+	health -= 1
+	%HealthBar.value = health
+	
+	if health <= 0:
+		%StateMachine.set_state("dead")
+
+
+func heal() -> void:
+	health += 1
+	health = clampi(health, 0, 10)
+	%HealthBar.value = health

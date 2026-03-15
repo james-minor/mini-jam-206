@@ -28,6 +28,7 @@ func get_current_room_type() -> DungeonGenerator.RoomType:
 
 
 func _on_floor_generation_complete() -> void:
+	PersistentRoomData.clear_room_data()
 	current_room = DungeonGenerator.entrance_position
 	get_tree().call_deferred("change_scene_to_packed", DungeonGenerator.get_room_file(current_room))
 

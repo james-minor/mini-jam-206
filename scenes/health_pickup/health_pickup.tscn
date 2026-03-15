@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cws3le6px7o3c"]
+
+[ext_resource type="Texture2D" uid="uid://crc8t7jjqkkji" path="res://scenes/health_pickup/health_pickup_sprite.png" id="1_801u0"]
+[ext_resource type="Script" uid="uid://y1lbrh60ened" path="res://scenes/health_pickup/health_pickup.gd" id="1_qpeq1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_801u0"]
+radius = 4.0
+
+[node name="HealthPickup" type="Area2D" unique_id=1547732914]
+collision_layer = 0
+script = ExtResource("1_qpeq1")
+chance_to_appear = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=547747181]
+texture = ExtResource("1_801u0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1088329057]
+shape = SubResource("CircleShape2D_801u0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
