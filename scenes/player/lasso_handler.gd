@@ -1,5 +1,9 @@
 extends Node2D
 
+## The minimum length the lasso needs to be to work.
+@export
+var min_lasso_length: float
+
 ## The maximum distance the player can lasso to / from.
 @export
 var max_lasso_length: float
@@ -18,6 +22,9 @@ func _ready() -> void:
 func lasso_to_object() -> void:
 	var space_state: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
 	%InvalidLassoTarget.pitch_scale = randf_range(0.9, 1.1)
+	
+	if global_position.distance_to(get_global_mouse_position()) < min_lasso_length:
+		return
 	
 	if global_position.distance_to(get_global_mouse_position()) > max_lasso_length:
 		%InvalidLassoTarget.play()
