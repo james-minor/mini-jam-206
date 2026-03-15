@@ -8,6 +8,8 @@ func _physics_process(delta: float) -> void:
 	if _is_running:
 		_time += delta
 
+func _ready() -> void:
+	start()
 
 ## Starts the run timer.
 func start() -> void:
