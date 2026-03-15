@@ -6,8 +6,19 @@ var throw_power: float
 
 var held_enemy: Enemy
 
+@onready
+var _hold_timer: Timer = Timer.new()
+
+
+func _ready() -> void:
+	_hold_timer.one_shot = true
+	_hold_timer.timeout.connect(_on_hold_timer_timeout)
+	add_child(_hold_timer)
+
+
 func on_enter_state() -> void:
 	%LassoLine.visible = true
+	_hold_timer.start(2)
 
 
 func input_state(event: InputEvent) -> void:
@@ -25,6 +36,12 @@ func process_state(delta: float) -> void:
 		%ThrowIndicator.visible = true
 	
 	%LassoLine.target_position = held_enemy.global_position
+
+
+func _on_hold_timer_timeout() -> void:
+	if held_enemy.global_position.distance_to(player.global_position) > 15:
+		held_enemy.throw(Vector2.ZERO, 0)
+		transition_to("moving")
 
 
 func on_exit_state() -> void:
