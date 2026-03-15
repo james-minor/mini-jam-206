@@ -44,7 +44,8 @@ func _on_player_monitor_body_entered(body: Node2D) -> void:
 	PlayerTracker.entering_direction = direction
 	
 	PlayerTracker.current_room += direction
-	var new_room_packed_scene: PackedScene = DungeonGenerator.get_room_file(PlayerTracker.current_room)
+	#var new_room_packed_scene: PackedScene = DungeonGenerator.get_room_file(PlayerTracker.current_room)
 	
+	SceneChanger.change_scene(DungeonGenerator.get_room_file(PlayerTracker.current_room))
 	
-	get_tree().call_deferred("change_scene_to_packed", new_room_packed_scene)
+	#get_tree().call_deferred("change_scene_to_packed", new_room_packed_scene)

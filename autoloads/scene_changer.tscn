@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b2nxt2fa0qcjx"]
+
+[ext_resource type="Script" uid="uid://bp7lo70t1c122" path="res://autoloads/scene_changer.gd" id="1_airqg"]
+[ext_resource type="Shader" uid="uid://8rj1aprswy33" path="res://autoloads/room_transition.gdshader" id="1_mpluv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_airqg"]
+shader = ExtResource("1_mpluv")
+shader_parameter/progress = 0.0
+shader_parameter/diamondPixelSize = 8.0
+
+[node name="SceneChanger" type="CanvasLayer" unique_id=1139350495]
+script = ExtResource("1_airqg")
+transition_speed = 0.5
+
+[node name="TransitionRect" type="ColorRect" parent="." unique_id=712333493]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_airqg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92156863, 0.41960785, 0.43529412, 1)
