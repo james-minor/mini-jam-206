@@ -22,6 +22,7 @@ PlayerTracker="*uid://bq7oj5lbp2sb2"
 DungeonGenerator="*uid://dnqwucvnbdy8m"
 GlobalVariables="*uid://hdx4srnd3tyu"
 SceneChanger="*uid://b2nxt2fa0qcjx"
+RunTimer="*uid://booxq73ldrhk2"
 
 [display]
 
