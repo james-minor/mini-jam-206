@@ -30,5 +30,8 @@ func lasso_to_object() -> void:
 		_player.velocity += _player.global_position.direction_to(result["position"]) * lasso_speed
 		
 		_player.move_and_slide()
+		
+		%SuccessfulLasso.pitch_scale = randf_range(0.9, 1.1)
+		%SuccessfulLasso.play()
 	else:
 		%InvalidLassoTarget.play()
