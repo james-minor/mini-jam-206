@@ -36,8 +36,9 @@ avoidance_enabled = true
 radius = 15.0
 avoidance_layers = 9
 
-[node name="EnemyStateMachine" type="Node" parent="." unique_id=1823030480]
+[node name="EnemyStateMachine" type="Node" parent="." unique_id=1823030480 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_cwlon")
+initial_state = NodePath("Moving")
 
 [node name="Moving" type="Node" parent="EnemyStateMachine" unique_id=62941909]
 script = ExtResource("4_gl05p")

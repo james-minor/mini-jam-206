@@ -19,6 +19,7 @@ var _player: Player = owner as Player
 func _ready() -> void:
 	GlobalVariables.max_lasso_length = self.max_lasso_length
 
+
 func lasso_to_object() -> void:
 	var space_state: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
 	%InvalidLassoTarget.pitch_scale = randf_range(0.9, 1.1)

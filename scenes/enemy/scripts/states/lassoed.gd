@@ -38,8 +38,3 @@ func input_state(event: InputEvent) -> void:
 		var speed = clamp(mouse_pos.distance_to(enemy.global_position), -50, 50) + 100
 		enemy.velocity = speed * direction
 		transition_to("thrown")
-
-
-func _on_death_collider_detector_body_entered(body: Node2D) -> void:
-	print("enemy has died")
-	enemy.queue_free.call_deferred() #TODO: replace this with death animation

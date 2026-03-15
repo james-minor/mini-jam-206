@@ -10,9 +10,12 @@ func _ready():
 	# and the navigation layout.
 	navigation_agent.path_desired_distance = 2.0
 	navigation_agent.target_desired_distance = 2.0
-	navigation_agent.debug_enabled = true
 	set_movement_target(GlobalVariables.player_position)
 	
+
+func on_enter_state() -> void:
+	%EnemySprite.play()
+
 
 func physics_process_state(_delta):
 	if navigation_agent.is_navigation_finished():
@@ -56,7 +59,7 @@ func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target
 
 
-func _on_death_collider_detector_body_entered(body: Node2D) -> void:
+func _on_death_collider_detector_body_entered(_body: Node2D) -> void:
 	transition_to("dead")
 
 
