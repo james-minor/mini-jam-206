@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cg65kwkxenppq" path="res://scenes/player/player.tscn" id="2_0kuf4"]
 [ext_resource type="TileSet" uid="uid://d2m771eun4ev6" path="res://dungeon_room/assets/world_tileset.tres" id="2_54pch"]
 [ext_resource type="Script" uid="uid://c8dcfb3vqph1v" path="res://dungeon_room/scripts/pit_generator.gd" id="2_ugxfd"]
+[ext_resource type="PackedScene" uid="uid://cws3le6px7o3c" path="res://scenes/health_pickup/health_pickup.tscn" id="5_7fi45"]
 [ext_resource type="PackedScene" uid="uid://b14go7akls5u4" path="res://scenes/room_door/room_door.tscn" id="5_wwxlq"]
 [ext_resource type="PackedScene" uid="uid://dpto04fvdfx58" path="res://scenes/floor_exit/floor_exit.tscn" id="6_ssxcs"]
 [ext_resource type="PackedScene" uid="uid://fjfalfdx5t15" path="res://scenes/timer_ui/timer_ui.tscn" id="7_yor3t"]
@@ -24,6 +25,9 @@ time_for_tile_break = 1.8
 
 [node name="FloorExit" parent="." unique_id=934106721 instance=ExtResource("6_ssxcs")]
 position = Vector2(-176, -96)
+
+[node name="HealthPickup" parent="." unique_id=1547732914 instance=ExtResource("5_7fi45")]
+position = Vector2(-176, -76)
 
 [node name="Doors" type="Node" parent="." unique_id=1557818040]
 

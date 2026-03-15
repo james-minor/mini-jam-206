@@ -7,6 +7,7 @@
 radius = 4.0
 
 [node name="HealthPickup" type="Area2D" unique_id=1547732914]
+scale = Vector2(2, 2)
 collision_layer = 0
 script = ExtResource("1_qpeq1")
 chance_to_appear = 3
