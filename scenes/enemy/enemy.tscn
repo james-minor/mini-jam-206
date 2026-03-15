@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bil75xvjf1hsl"]
+[gd_scene format=4 uid="uid://bil75xvjf1hsl"]
 
 [ext_resource type="Script" uid="uid://c2i43o8qxju3y" path="res://scenes/enemy/scripts/enemy.gd" id="1_cwlon"]
 [ext_resource type="SpriteFrames" uid="uid://c48dso2dfwf3w" path="res://scenes/enemy/enemy_sprite_frames.tres" id="1_gl05p"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://d17nxvlrkkve0" path="res://scenes/enemy/scripts/states/moving.gd" id="4_gl05p"]
 [ext_resource type="Script" uid="uid://cbrmlxdojsmap" path="res://scenes/enemy/scripts/states/dead.gd" id="5_nbhyu"]
 [ext_resource type="Script" uid="uid://8p47vsqol05n" path="res://scenes/enemy/scripts/states/lassoed.gd" id="6_13gj6"]
-[ext_resource type="Script" uid="uid://d38o8p4j1sbjx" path="res://scenes/enemy/scripts/states/punched.gd" id="7_4efjx"]
 [ext_resource type="Script" uid="uid://phvwlvlba8ym" path="res://scenes/enemy/thrown.gd" id="8_13gj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwlon"]
@@ -17,8 +16,13 @@ size = Vector2(8, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nbhyu"]
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_nbhyu"]
+data = PackedByteArray("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MEgEGoAAgAgfAiiiiiiiihKKKKKKKKKKEooooooooooSiiiiiiiiihKKKKKKKKKKMgEAgg1FAEAWigEUQiiiihKKKKKKKKKKEooooooooooSiiiiiiiiihKKKKKKKKKKMgEAgggEGooVAEAAiiiiAgEUkkkkkkkkCSSSSSSSSSRBNO2SSCCQQBoaACIAARAADbbTTTTTTTQgQR3EgQAQCA9k200mmk00CaaTTSaaTTQJppNNJppNNAmmk00mmk00MEeFFEEEAEEYUUUAAAAAiAW0k00k00k0DSTTSTTSTTRwSAQQSAQQR0+2QAADARABKBAAFEAAgEAPjttpptNNpgm002mm002mCbTTaabTTaYJtNNpptNNpgEArEQNCAVQDP8NAAz/DQD4lwiV+XElVQm002mm002mCbTTaabTTaYJtNNpptNNpgm002mm002mMEEA0AAAggBiCAQQQQQfUEzTRBBBAIIBHGFBBBBBBBAUAgggEAggEBQAQQAQQAQCEBABABABAIAQEAigAgAEABCAAQACAAQADbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbZQQQQQQfwASyHt7trbrZZbF11ttslhgkkwQQQQQcwwQBoYABBAABAABKKKKKKKKKIIooooooooogiiiiiiiiiiCKKKKKKKKKIIooooooooogiiiiiiiiiiCKKKKKKKKKJAQQQQQQCCMyHIIIJBBIIIFkEEEEAEAgAAkkkkkkkkkjBBBBBGYYBBDPQBBBBBBBAEEEEEEEEEEAQQQQQQQQQQBBBBBBBBBBBAQeQgiCAQQShAAIAIAIBBGFEAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAwQQQCCCMwwGIIIBBIIGYYHZkBBBAIIBAUAggEAgEAgBQCAQCACAQAFABABABABAAQgAEAAgAEABCAAQAARRQADbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbZQQRISSCCCCB8YIABAAAAIDaRSSSSSSSQwQQQCCAQQaBmgQCACARQADbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbYNtttttttttg2222222222MEEAggEEA0AcEEUEAEAEABCKKAAARRRRDbbbbbbbbbYNtttttttttlBBBBBBBAwLKsMkkkkkkEkJXWGigEEAggAQQCCAQQCCABBAIIBBAIIwQQQQR0EQQBACACAARRRRFFAAAAIgIogNtppNNpptNA2mm002mm00DaabTTaabTQwQQQCB0UCARgQQAQACAAADbbbaabbTbYJttNtpttNtgm2022m2022CbbTbabbTbYwQQCCCKAAQBCKAQAQARRQCTbTbbbbbbZAQQR0UQCCARyhQQCCAQAQEBABFFAAIooHtttttttttg2222222222MEEAjoAEAggUgAEAAgAAige222222222DbbbbbbbbbYNtttttttttg2222222222DbbbbbbbbbYNtttttttttg2222222222OgoggEAggEAWAEAEAAEAABRRRRRRRRRRFFFFFFFFFFEUUUUUUUUUUUBBBBAIIIP6KZkksMMMMMMVS2WyyyyywzIOYYIIIJBBDMOtllhlhlgGGCGCGCGCCAIBAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQQSMwSCCCAOxykUkikkUCSKSRSSKSRQx0QCCCCCCCA4oABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAEAACAAQACAAQAAIABAAIABAAAgAEAAgAAA=")
+format = 3
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1201719158]
-collision_layer = 5
+collision_layer = 16
+collision_mask = 4
 script = ExtResource("1_cwlon")
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="." unique_id=468463512]
@@ -27,6 +31,7 @@ sprite_frames = ExtResource("1_gl05p")
 animation = &"move_down"
 
 [node name="WorldCollider" type="CollisionShape2D" parent="." unique_id=606334778]
+unique_name_in_owner = true
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_cwlon")
 
@@ -36,27 +41,24 @@ avoidance_enabled = true
 radius = 15.0
 avoidance_layers = 9
 
-[node name="EnemyStateMachine" type="Node" parent="." unique_id=1823030480 node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1823030480 node_paths=PackedStringArray("initial_state")]
+unique_name_in_owner = true
 script = ExtResource("2_cwlon")
 initial_state = NodePath("Moving")
 
-[node name="Moving" type="Node" parent="EnemyStateMachine" unique_id=62941909]
+[node name="Moving" type="Node" parent="StateMachine" unique_id=62941909]
 script = ExtResource("4_gl05p")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
-[node name="Dead" type="Node" parent="EnemyStateMachine" unique_id=1330841031]
+[node name="Dead" type="Node" parent="StateMachine" unique_id=1330841031]
 script = ExtResource("5_nbhyu")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
-[node name="Lassoed" type="Node" parent="EnemyStateMachine" unique_id=1551481605]
+[node name="Lassoed" type="Node" parent="StateMachine" unique_id=1551481605]
 script = ExtResource("6_13gj6")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
-[node name="Punched" type="Node" parent="EnemyStateMachine" unique_id=1613003001]
-script = ExtResource("7_4efjx")
-metadata/_custom_type_script = "uid://b56htn6ulc6xf"
-
-[node name="Thrown" type="Node" parent="EnemyStateMachine" unique_id=9126366]
+[node name="Thrown" type="Node" parent="StateMachine" unique_id=9126366]
 script = ExtResource("8_13gj6")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
@@ -77,6 +79,11 @@ autostart = true
 unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_nbhyu")
 
-[connection signal="body_entered" from="DeathColliderDetector" to="EnemyStateMachine/Moving" method="_on_death_collider_detector_body_entered"]
-[connection signal="body_entered" from="DeathColliderDetector" to="EnemyStateMachine/Lassoed" method="_on_death_collider_detector_body_entered"]
-[connection signal="timeout" from="Timer" to="EnemyStateMachine/Moving" method="_on_timer_timeout"]
+[node name="HurtSoundEffect" type="AudioStreamPlayer" parent="." unique_id=1375074681]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamWAV_nbhyu")
+volume_db = -15.0
+
+[connection signal="body_entered" from="DeathColliderDetector" to="StateMachine/Moving" method="_on_death_collider_detector_body_entered"]
+[connection signal="body_entered" from="DeathColliderDetector" to="StateMachine/Lassoed" method="_on_death_collider_detector_body_entered"]
+[connection signal="timeout" from="Timer" to="StateMachine/Moving" method="_on_timer_timeout"]

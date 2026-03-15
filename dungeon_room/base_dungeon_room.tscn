@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://d2m771eun4ev6" path="res://dungeon_room/assets/world_tileset.tres" id="2_54pch"]
 [ext_resource type="Script" uid="uid://c8dcfb3vqph1v" path="res://dungeon_room/scripts/pit_generator.gd" id="2_ugxfd"]
 [ext_resource type="PackedScene" uid="uid://b14go7akls5u4" path="res://scenes/room_door/room_door.tscn" id="5_wwxlq"]
-[ext_resource type="PackedScene" uid="uid://dpto04fvdfx58" path="res://scenes/floor_exit/assets/floor_exit.tscn" id="6_ssxcs"]
+[ext_resource type="PackedScene" uid="uid://dpto04fvdfx58" path="res://scenes/floor_exit/floor_exit.tscn" id="6_ssxcs"]
 
 [node name="BaseDungeonRoom" type="Node2D" unique_id=609434640]
 script = ExtResource("1_ugxfd")

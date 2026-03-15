@@ -15,5 +15,8 @@ func _on_player_monitor_body_entered(body: Node2D) -> void:
 	
 	DungeonGenerator.generate_floor()
 	await DungeonGenerator.generation_complete
+	
+	%LevelExitSoundPlayer.play()
+	await %LevelExitSoundPlayer.finished
 	PlayerTracker.current_floor += 1
 	SceneChanger.change_scene(DungeonGenerator.get_room_file(PlayerTracker.current_room))
