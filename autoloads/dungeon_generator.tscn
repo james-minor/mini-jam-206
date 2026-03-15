@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dnqwucvnbdy8m"]
 
 [ext_resource type="Script" uid="uid://dnrygbcgvm5qc" path="res://autoloads/dungeon_generator.gd" id="1_8ycwe"]
-[ext_resource type="PackedScene" uid="uid://bxlivo6iq2j25" path="res://dungeon_room/variations/dungeon_room_a.tscn" id="2_2owt7"]
+[ext_resource type="PackedScene" uid="uid://bb5okq8ad2jkd" path="res://dungeon_room/variations/dungeon_room_e.tscn" id="2_abi2i"]
 [ext_resource type="PackedScene" uid="uid://dv3vplbui483j" path="res://dungeon_room/variations/dungeon_room_b.tscn" id="3_abi2i"]
 [ext_resource type="PackedScene" uid="uid://buc2llukbsr0r" path="res://dungeon_room/variations/dungeon_room_c.tscn" id="4_ccdrg"]
 [ext_resource type="PackedScene" uid="uid://t0dg1ff2el0m" path="res://dungeon_room/variations/dungeon_room_d.tscn" id="5_qvi61"]
 
 [node name="DungeonGenerator" type="Node2D" unique_id=1315427423]
 script = ExtResource("1_8ycwe")
-room_variations = Array[PackedScene]([ExtResource("2_2owt7"), ExtResource("3_abi2i"), ExtResource("4_ccdrg"), ExtResource("5_qvi61")])
+room_variations = Array[PackedScene]([ExtResource("2_abi2i"), ExtResource("3_abi2i"), ExtResource("4_ccdrg"), ExtResource("5_qvi61")])

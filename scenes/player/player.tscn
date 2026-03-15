@@ -10,9 +10,11 @@
 [ext_resource type="Script" uid="uid://c6kmtrrfsy8gx" path="res://scenes/player/scripts/states/dead.gd" id="8_5gtgg"]
 [ext_resource type="Script" uid="uid://q7dxkx1eklm1" path="res://scenes/player/lasso_line.gd" id="8_qek5x"]
 [ext_resource type="Script" uid="uid://bpcshexn5mkcg" path="res://scenes/player/scripts/states/dashing.gd" id="9_h17s1"]
+[ext_resource type="AudioStream" uid="uid://d11e8c2tg8bvt" path="res://scenes/player/assets/invalid_lasso_target.wav" id="11_je7p5"]
+[ext_resource type="AudioStream" uid="uid://b2sglpd0ft0em" path="res://scenes/player/assets/successful_lasso.wav" id="12_fm80t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
-size = Vector2(14, 14)
+size = Vector2(12, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gtgg"]
 size = Vector2(8, 7)
@@ -75,5 +77,17 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathColliderDetector" unique_id=1650239519]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_5gtgg")
+
+[node name="AudioStreamPlayers" type="Node" parent="." unique_id=116877095]
+
+[node name="InvalidLassoTarget" type="AudioStreamPlayer" parent="AudioStreamPlayers" unique_id=442551654]
+unique_name_in_owner = true
+stream = ExtResource("11_je7p5")
+volume_db = -15.0
+
+[node name="SuccessfulLasso" type="AudioStreamPlayer" parent="AudioStreamPlayers" unique_id=672197027]
+unique_name_in_owner = true
+stream = ExtResource("12_fm80t")
+volume_db = -20.0
 
 [connection signal="body_entered" from="DeathColliderDetector" to="StateMachine/Moving" method="_on_death_collider_detector_body_entered"]

@@ -17,8 +17,10 @@ func _ready() -> void:
 
 func lasso_to_object() -> void:
 	var space_state: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
+	%InvalidLassoTarget.pitch_scale = randf_range(0.9, 1.1)
 	
 	if global_position.distance_to(get_global_mouse_position()) > max_lasso_length:
+		%InvalidLassoTarget.play()
 		return
 	
 	var query = PhysicsRayQueryParameters2D.create(global_position, get_global_mouse_position(), 16)
@@ -50,3 +52,7 @@ func lasso_enemy() -> void:
 		#_player.move_and_slide()
 	elif result:
 		print("Can't lasso enemy of type %s" % [typeof(result.collider)])
+		%SuccessfulLasso.pitch_scale = randf_range(0.9, 1.1)
+		%SuccessfulLasso.play()
+	else:
+		%InvalidLassoTarget.play()

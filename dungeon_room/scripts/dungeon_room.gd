@@ -1,27 +1,25 @@
 class_name DungeonRoom
 extends Node2D
 
-const NORTH_DOOR_POSITION: Vector2i = Vector2i(0, -3)
-
 func _ready() -> void:
 	check_doors()
 
 
 func check_doors() -> void:
 	# Checking north door.
-	if not _should_door_exist(Vector2i.UP):
+	if not _should_door_exist(%NorthDoor.direction):
 		%NorthDoor.disable()
 	
 	# Checking east door.
-	if not _should_door_exist(Vector2i.RIGHT):
+	if not _should_door_exist(%EastDoor.direction):
 		%EastDoor.disable()
 	
 	# Checking south door.
-	if not _should_door_exist(Vector2i.DOWN):
+	if not _should_door_exist(%SouthDoor.direction):
 		%SouthDoor.disable()
 	
 	# Checking west door.
-	if not _should_door_exist(Vector2i.LEFT):
+	if not _should_door_exist(%WestDoor.direction):
 		%WestDoor.disable()
 
 
