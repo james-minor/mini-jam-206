@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://chv6ibghhlk27"]
+
+[ext_resource type="FontFile" uid="uid://cbkqnj532nd23" path="res://scenes/timer_ui/orange_kid_font.otf" id="1_cag7l"]
+
+[resource]
+font = ExtResource("1_cag7l")
+font_size = 12
+font_color = Color(1, 0.9647059, 0.827451, 1)
