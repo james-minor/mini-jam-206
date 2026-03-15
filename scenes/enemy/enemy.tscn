@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cbrmlxdojsmap" path="res://scenes/enemy/scripts/states/dead.gd" id="5_nbhyu"]
 [ext_resource type="Script" uid="uid://8p47vsqol05n" path="res://scenes/enemy/scripts/states/lassoed.gd" id="6_13gj6"]
 [ext_resource type="Script" uid="uid://d38o8p4j1sbjx" path="res://scenes/enemy/scripts/states/punched.gd" id="7_4efjx"]
+[ext_resource type="Script" uid="uid://phvwlvlba8ym" path="res://scenes/enemy/thrown.gd" id="8_13gj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cwlon"]
 size = Vector2(14, 14)
@@ -31,6 +32,9 @@ shape = SubResource("RectangleShape2D_cwlon")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=297139905]
 unique_name_in_owner = true
+avoidance_enabled = true
+radius = 15.0
+avoidance_layers = 9
 
 [node name="EnemyStateMachine" type="Node" parent="." unique_id=1823030480]
 script = ExtResource("2_cwlon")
@@ -51,6 +55,10 @@ metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 script = ExtResource("7_4efjx")
 metadata/_custom_type_script = "uid://b56htn6ulc6xf"
 
+[node name="Thrown" type="Node" parent="EnemyStateMachine" unique_id=9126366]
+script = ExtResource("8_13gj6")
+metadata/_custom_type_script = "uid://b56htn6ulc6xf"
+
 [node name="DeathColliderDetector" type="Area2D" parent="." unique_id=1774818799]
 position = Vector2(0, 2)
 collision_layer = 0
@@ -69,4 +77,5 @@ unique_name_in_owner = true
 shape = SubResource("RectangleShape2D_nbhyu")
 
 [connection signal="body_entered" from="DeathColliderDetector" to="EnemyStateMachine/Moving" method="_on_death_collider_detector_body_entered"]
+[connection signal="body_entered" from="DeathColliderDetector" to="EnemyStateMachine/Lassoed" method="_on_death_collider_detector_body_entered"]
 [connection signal="timeout" from="Timer" to="EnemyStateMachine/Moving" method="_on_timer_timeout"]

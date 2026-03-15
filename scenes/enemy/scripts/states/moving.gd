@@ -14,7 +14,7 @@ func _ready():
 	set_movement_target(GlobalVariables.player_position)
 	
 
-func _physics_process(_delta):
+func physics_process_state(_delta):
 	if navigation_agent.is_navigation_finished():
 		return
 	
@@ -39,16 +39,18 @@ func _physics_process(_delta):
 func input_state(event: InputEvent) -> void:
 	if not event.is_action_pressed("lasso_pull_self"):
 		return
-	var mouse_pos = enemy.get_local_mouse_position()# I hate this
+	var mouse_pos = enemy.get_local_mouse_position()
 	var clickbox:Rect2 = %ClickBox2.get_shape().get_rect()
-	clickbox.position += enemy.position
-	print("Enemy clickbox rooted at %v with size %v" % [clickbox.position, clickbox.size])
-	if clickbox.has_point(mouse_pos):
-		print("Enemy selected")
-	else:
-		print("Player at pos %v. Click at %v" % [GlobalVariables.player_position, mouse_pos])
+	if not clickbox.has_point(mouse_pos):
+		return
+	print("Enemy selected. Checking range...")
 	if GlobalVariables.player_position.distance_to(enemy.global_position) <= GlobalVariables.max_lasso_length:
 		print("Enemy within range")
+		%EnemySprite.animation = "struggle"
+		%EnemySprite.play()
+		transition_to("lassoed")
+	else:
+		print("Enemy out of range")
 
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target
