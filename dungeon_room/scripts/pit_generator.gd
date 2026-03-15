@@ -60,4 +60,9 @@ func _on_collapse_timer_timeout() -> void:
 
 
 func _on_player_enter_door() -> void:
+	# Changing cracked cells to be pits on room exit.
+	for cell_coordinates in get_used_cells():
+		if get_cell_atlas_coords(cell_coordinates) == Vector2i(0, 4):
+			set_cells_terrain_connect([cell_coordinates], 0, 0)
+	
 	PersistentRoomData.room_data[PlayerTracker.current_room] = tile_map_data
