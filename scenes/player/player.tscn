@@ -50,7 +50,6 @@ unique_name_in_owner = true
 sprite_frames = ExtResource("1_oul6g")
 animation = &"die"
 autoplay = "die"
-frame_progress = 0.5072269
 
 [node name="WorldCollider" type="CollisionShape2D" parent="." unique_id=1424195601]
 position = Vector2(0, 1)

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://de4j4eayh0qds"]
+
+[ext_resource type="Script" uid="uid://dd531w57u52vw" path="res://scenes/game_over_screen/game_over_screen.gd" id="1_l2cnm"]
+
+[node name="GameOverScreen" type="Control" unique_id=80142248]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l2cnm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=687386814]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.92156863, 0.41960785, 0.43529412, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1943335009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=992463080]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=676788066]
+layout_mode = 2
+text = "Game Over"
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=620750434]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Time: "
+
+[node name="FloorLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=715028777]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Floor:"
+
+[node name="NewRunButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=900025482]
+unique_name_in_owner = true
+layout_mode = 2
+text = "New Run"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/NewRunButton" to="." method="_on_new_run_button_pressed"]

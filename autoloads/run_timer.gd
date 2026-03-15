@@ -24,3 +24,6 @@ func stop() -> void:
 ## Returns the run timer.
 func get_time() -> float:
 	return _time
+
+func get_time_string() -> String:
+	return "%02d : %02d" % [_time / 60, int(_time) % 60]
