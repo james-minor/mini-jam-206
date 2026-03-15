@@ -35,8 +35,6 @@ func try_lasso() -> void:
 	var result = space_state.intersect_ray(query)
 	
 	if result and result.collider is Enemy:
-		print("Lassoing enemy...")
-		
 		(result.collider as Enemy).get_lassoed()
 		%HoldingEnemy.held_enemy = result.collider as Enemy
 		%StateMachine.set_state("holdingenemy")

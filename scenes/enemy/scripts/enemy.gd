@@ -11,6 +11,7 @@ func get_lassoed() -> void:
 
 func throw(direction: Vector2, power: float) -> void:
 	velocity = direction * power
+	%StateMachine.set_state("moving")
 	%StateMachine.set_state("thrown")
 	
 

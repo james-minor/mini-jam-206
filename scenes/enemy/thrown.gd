@@ -5,12 +5,10 @@ func physics_process_state(delta: float) -> void:
 	var collision: KinematicCollision2D = enemy.move_and_collide(enemy.velocity * delta)
 	
 	if collision: 
-		print("wowza")
-		
 		%HurtSoundEffect.pitch_scale = randf_range(0.9, 1.1)
 		%HurtSoundEffect.play()
 		
-		enemy.velocity *= 0.6
+		enemy.velocity *= 0.5
 		enemy.velocity *= Vector2.ONE.bounce(collision.get_normal())
 		enemy.health -= enemy.velocity.length()
 	

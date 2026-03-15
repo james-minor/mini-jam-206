@@ -8,7 +8,7 @@ var movement_speed: float = 20.0
 func _ready():
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
-	navigation_agent.path_desired_distance = 2.0
+	navigation_agent.path_desired_distance = 1.0
 	navigation_agent.target_desired_distance = 2.0
 	set_movement_target(GlobalVariables.player_position)
 	
@@ -44,6 +44,7 @@ func set_movement_target(movement_target: Vector2):
 
 
 func _on_death_collider_detector_body_entered(_body: Node2D) -> void:
+	print("Enemy hit death collider")
 	transition_to("dead")
 
 
