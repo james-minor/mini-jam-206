@@ -14,8 +14,10 @@ var _player: Player = owner as Player
 
 func lasso_to_object() -> void:
 	var space_state: PhysicsDirectSpaceState2D = get_world_2d().direct_space_state
+	%InvalidLassoTarget.pitch_scale = randf_range(0.9, 1.1)
 	
 	if global_position.distance_to(get_global_mouse_position()) > max_lasso_length:
+		%InvalidLassoTarget.play()
 		return
 	
 	var query = PhysicsRayQueryParameters2D.create(global_position, get_global_mouse_position(), 16)
@@ -28,3 +30,8 @@ func lasso_to_object() -> void:
 		_player.velocity += _player.global_position.direction_to(result["position"]) * lasso_speed
 		
 		_player.move_and_slide()
+		
+		%SuccessfulLasso.pitch_scale = randf_range(0.9, 1.1)
+		%SuccessfulLasso.play()
+	else:
+		%InvalidLassoTarget.play()

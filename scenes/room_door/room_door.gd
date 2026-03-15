@@ -20,11 +20,13 @@ func _ready() -> void:
 
 
 func disable() -> void:
+	%WallCollider.collision_layer = 4
 	%DoorSprite.region_rect.position.x = 16
 	%PlayerMonitor.monitoring = false
 
 
 func enable() -> void:
+	%WallCollider.collision_layer = 0
 	%DoorSprite.region_rect.position.x = 0
 	%PlayerMonitor.monitoring = true
 
@@ -34,6 +36,10 @@ func _on_player_monitor_body_entered(body: Node2D) -> void:
 		return
 	
 	player_entered.emit()
+	
+	%AudioPlayer.pitch_scale = randf_range(0.9, 1.1)
+	%AudioPlayer.play()
+	await %AudioPlayer.finished
 	
 	PlayerTracker.entering_direction = direction
 	
