@@ -16,8 +16,8 @@ func input_state(event: InputEvent) -> void:
 		%PlayerSprite.animation = "move_left"
 	
 	if event.is_action_pressed("lasso_pull_self"):
-		print("Lassoing towards an object.")
-		transition_to("dead")
+		print("Attempting to lasso a scoundrel")
+		%LassoHandler.lasso_enemy()
 	if event.is_action_pressed("lasso_pull_other"):
 		%LassoHandler.lasso_to_object()
 	
