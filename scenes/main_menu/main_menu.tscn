@@ -1,34 +1,56 @@
 [gd_scene format=3 uid="uid://c4eav14dpmfr7"]
 
 [ext_resource type="Script" uid="uid://cida1m3f277rf" path="res://scenes/main_menu/main_menu.gd" id="1_fsom3"]
+[ext_resource type="FontFile" uid="uid://cbkqnj532nd23" path="res://scenes/timer_ui/orange_kid_font.otf" id="2_0ebjn"]
+[ext_resource type="Theme" uid="uid://ckej1goev05yt" path="res://game_theme.tres" id="3_ob46e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ob46e"]
+font = ExtResource("2_0ebjn")
+font_size = 48
+font_color = Color(0.4862745, 0.24705882, 0.34509805, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ebjn"]
+font = ExtResource("2_0ebjn")
+font_size = 24
+font_color = Color(0.4862745, 0.24705882, 0.34509805, 1)
 
 [node name="MainMenu" type="CanvasLayer" unique_id=475725411]
 script = ExtResource("1_fsom3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1204403398]
-anchors_preset = 14
-anchor_top = 0.5
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1690911561]
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -1.0
-offset_top = -34.0
-offset_right = -1.0
-offset_bottom = 32.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1976577773]
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer" unique_id=846883978]
 layout_mode = 2
-text = "Run Seed:"
+theme_override_constants/separation = 20
 
-[node name="SeedInput" type="LineEdit" parent="VBoxContainer" unique_id=571798642]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer2" unique_id=694634359]
+layout_mode = 2
+text = "THE LONE LASSO"
+label_settings = SubResource("LabelSettings_ob46e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer2" unique_id=1204403398]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer2/VBoxContainer" unique_id=1976577773]
+layout_mode = 2
+text = "SEED:"
+label_settings = SubResource("LabelSettings_0ebjn")
+
+[node name="SeedInput" type="LineEdit" parent="CenterContainer/VBoxContainer2/VBoxContainer" unique_id=571798642]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_ob46e")
 text = "Mini Jam!"
 
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=187722633]
+[node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer2/VBoxContainer" unique_id=187722633]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("3_ob46e")
 text = "Start Run"
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

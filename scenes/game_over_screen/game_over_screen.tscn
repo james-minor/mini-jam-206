@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dd531w57u52vw" path="res://scenes/game_over_screen/game_over_screen.gd" id="1_l2cnm"]
 [ext_resource type="LabelSettings" uid="uid://chv6ibghhlk27" path="res://assets/default_label_settings.tres" id="2_wndrr"]
+[ext_resource type="Theme" uid="uid://ckej1goev05yt" path="res://game_theme.tres" id="3_1ce25"]
 
 [node name="GameOverScreen" type="CanvasLayer" unique_id=171340332]
 script = ExtResource("1_l2cnm")
@@ -44,6 +45,7 @@ label_settings = ExtResource("2_wndrr")
 [node name="NewRunButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=900025482]
 unique_name_in_owner = true
 layout_mode = 2
-text = "New Run"
+theme = ExtResource("3_1ce25")
+text = "      New Run      "
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/NewRunButton" to="." method="_on_new_run_button_pressed"]

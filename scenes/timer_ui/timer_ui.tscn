@@ -5,8 +5,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_hel6x"]
 font = ExtResource("2_ll2t2")
-font_size = 12
-font_color = Color(0.4862745, 0.24705882, 0.34509805, 1)
+font_size = 24
+font_color = Color(0.92156863, 0.41960785, 0.43529412, 1)
 
 [node name="TimerUi" type="Control" unique_id=1189747434]
 layout_mode = 3
@@ -17,15 +17,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hel6x")
 
-[node name="TimerLabel" type="Label" parent="." unique_id=513193315]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1491741616]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 30.0
 grow_horizontal = 2
+theme_override_constants/margin_right = 5
+
+[node name="TimerLabel" type="Label" parent="MarginContainer" unique_id=513193315]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0000"
 label_settings = SubResource("LabelSettings_hel6x")
-horizontal_alignment = 1
+horizontal_alignment = 2
+vertical_alignment = 1
