@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mini Jam 206"
-run/main_scene="uid://dimspskafgniy"
+run/main_scene="uid://bx5tbc53fq0hb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,6 +21,7 @@ PersistentRoomData="*uid://d2m5qdbyx2om1"
 PlayerTracker="*uid://bq7oj5lbp2sb2"
 DungeonGenerator="*uid://dnqwucvnbdy8m"
 GlobalVariables="*uid://hdx4srnd3tyu"
+SceneChanger="*uid://b2nxt2fa0qcjx"
 
 [display]
 
@@ -78,6 +79,7 @@ move_dash={
 
 [layer_names]
 
+2d_physics/layer_1="Player"
 2d_navigation/layer_1="Ground Navigation"
 2d_physics/layer_3="World Environment"
 2d_physics/layer_4="Death Collider"
@@ -92,3 +94,4 @@ common/physics_interpolation=true
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(1, 0.9647059, 0.827451, 1)

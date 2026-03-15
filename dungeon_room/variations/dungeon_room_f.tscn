@@ -21,3 +21,6 @@ position = Vector2(-32, 0)
 
 [node name="Player" parent="." index="4" unique_id=1087271331]
 position = Vector2(-176, -136)
+
+[node name="FloorExit" parent="." index="6" unique_id=934106721]
+position = Vector2(-8, -24)
