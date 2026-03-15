@@ -70,6 +70,9 @@ func set_room_type(position: Vector2i, value: RoomType) -> void:
 
 ## Helper function that returns the PackedScene for specific room position.
 func get_room_file(position: Vector2i) -> PackedScene:
+	if _convert_position_to_index(position) < 0 or _convert_position_to_index(position) >= _floor_room_files.size():
+		return null
+	
 	return _floor_room_files[_convert_position_to_index(position)]
 
 ## Helper function that sets PackedScene for a room.
@@ -104,10 +107,23 @@ func _initialize_dungeon() -> void:
 	_floor_room_types = []
 	_floor_room_files = []
 	
+	# Filling room types as empty rooms.
 	for x in DIMENSIONS.x:
 		for y in DIMENSIONS.y:
 			_floor_room_types.append(RoomType.EMPTY)
-			_floor_room_files.append(room_variations.pick_random())
+	
+	# Generating room types.
+	for x in DIMENSIONS.x:
+		for y in DIMENSIONS.y:
+			var selected_room_file: PackedScene = room_variations.pick_random()
+			
+			while selected_room_file == get_room_file(Vector2i(x - 1, y)) or \
+			selected_room_file == get_room_file(Vector2i(x + 1, y)) or \
+			selected_room_file == get_room_file(Vector2i(x, y - 1)) or \
+			selected_room_file == get_room_file(Vector2i(x, y + 1)):
+				selected_room_file = room_variations.pick_random()
+			
+			_floor_room_files.append(selected_room_file)
 
 
 func _place_entrance() -> void:
