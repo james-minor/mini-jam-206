@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dpto04fvdfx58"]
+
+[ext_resource type="Script" uid="uid://s8vmeqeavru4" path="res://scenes/floor_exit/assets/floor_exit.gd" id="1_0cuui"]
+[ext_resource type="Texture2D" uid="uid://h2ngiabkstjk" path="res://scenes/floor_exit/assets/floor_exit.png" id="1_ylopt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cuui"]
+size = Vector2(16, 15)
+
+[node name="FloorExit" type="Node2D" unique_id=934106721]
+script = ExtResource("1_0cuui")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=571333685]
+texture = ExtResource("1_ylopt")
+
+[node name="PlayerMonitor" type="Area2D" parent="." unique_id=53733162]
+unique_name_in_owner = true
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerMonitor" unique_id=740464190]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_0cuui")
+
+[connection signal="body_entered" from="PlayerMonitor" to="." method="_on_player_monitor_body_entered"]
