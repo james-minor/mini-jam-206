@@ -23,6 +23,7 @@ DungeonGenerator="*uid://dnqwucvnbdy8m"
 GlobalVariables="*uid://hdx4srnd3tyu"
 SceneChanger="*uid://b2nxt2fa0qcjx"
 RunTimer="*uid://booxq73ldrhk2"
+BgmPlayer="*uid://b7al84rkuolqt"
 
 [display]
 
