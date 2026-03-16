@@ -20,6 +20,7 @@ offset_bottom = 270.0
 texture = ExtResource("1_c48gr")
 
 [node name="Cell" type="ColorRect" parent="." unique_id=976830828]
+z_index = 1
 layout_mode = 0
 offset_left = 30.0
 offset_top = 50.0
@@ -28,6 +29,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell2" type="ColorRect" parent="." unique_id=1432836525]
+z_index = 1
 layout_mode = 0
 offset_left = 77.75
 offset_top = 50.0
@@ -36,6 +38,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell3" type="ColorRect" parent="." unique_id=610247887]
+z_index = 1
 layout_mode = 0
 offset_left = 125.25
 offset_top = 50.0
@@ -44,6 +47,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell4" type="ColorRect" parent="." unique_id=1853024250]
+z_index = 1
 layout_mode = 0
 offset_left = 172.5
 offset_top = 50.0
@@ -52,6 +56,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell5" type="ColorRect" parent="." unique_id=771909384]
+z_index = 1
 layout_mode = 0
 offset_left = 220.0
 offset_top = 50.0
@@ -60,6 +65,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell6" type="ColorRect" parent="." unique_id=456815147]
+z_index = 1
 layout_mode = 0
 offset_left = 267.5
 offset_top = 50.0
@@ -68,6 +74,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell7" type="ColorRect" parent="." unique_id=1546561805]
+z_index = 1
 layout_mode = 0
 offset_left = 314.75
 offset_top = 50.0
@@ -76,6 +83,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell8" type="ColorRect" parent="." unique_id=1420232413]
+z_index = 1
 layout_mode = 0
 offset_left = 362.25
 offset_top = 50.0
@@ -84,6 +92,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell9" type="ColorRect" parent="." unique_id=381043817]
+z_index = 1
 layout_mode = 0
 offset_left = 409.75
 offset_top = 50.0
@@ -92,6 +101,7 @@ offset_bottom = 69.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell10" type="ColorRect" parent="." unique_id=49592703]
+z_index = 1
 layout_mode = 0
 offset_left = 30.0
 offset_top = 88.0
@@ -100,6 +110,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell11" type="ColorRect" parent="." unique_id=1112170]
+z_index = 1
 layout_mode = 0
 offset_left = 77.75
 offset_top = 88.0
@@ -108,6 +119,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell12" type="ColorRect" parent="." unique_id=1319533043]
+z_index = 1
 layout_mode = 0
 offset_left = 125.25
 offset_top = 88.0
@@ -116,6 +128,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell13" type="ColorRect" parent="." unique_id=2041340881]
+z_index = 1
 layout_mode = 0
 offset_left = 172.5
 offset_top = 88.0
@@ -124,6 +137,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell14" type="ColorRect" parent="." unique_id=1563960871]
+z_index = 1
 layout_mode = 0
 offset_left = 220.0
 offset_top = 88.0
@@ -132,6 +146,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell15" type="ColorRect" parent="." unique_id=1176124362]
+z_index = 1
 layout_mode = 0
 offset_left = 267.5
 offset_top = 88.0
@@ -140,6 +155,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell16" type="ColorRect" parent="." unique_id=1684735176]
+z_index = 1
 layout_mode = 0
 offset_left = 314.75
 offset_top = 88.0
@@ -148,6 +164,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell17" type="ColorRect" parent="." unique_id=63863284]
+z_index = 1
 layout_mode = 0
 offset_left = 362.25
 offset_top = 88.0
@@ -156,6 +173,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell18" type="ColorRect" parent="." unique_id=2001487189]
+z_index = 1
 layout_mode = 0
 offset_left = 409.75
 offset_top = 88.0
@@ -164,6 +182,7 @@ offset_bottom = 107.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell19" type="ColorRect" parent="." unique_id=2062158010]
+z_index = 1
 layout_mode = 0
 offset_left = 30.0
 offset_top = 126.0
@@ -172,6 +191,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell20" type="ColorRect" parent="." unique_id=547828198]
+z_index = 1
 layout_mode = 0
 offset_left = 77.75
 offset_top = 126.0
@@ -180,6 +200,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell21" type="ColorRect" parent="." unique_id=64264523]
+z_index = 1
 layout_mode = 0
 offset_left = 125.25
 offset_top = 126.0
@@ -188,6 +209,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell22" type="ColorRect" parent="." unique_id=567820420]
+z_index = 1
 layout_mode = 0
 offset_left = 172.5
 offset_top = 126.0
@@ -196,6 +218,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell23" type="ColorRect" parent="." unique_id=246148029]
+z_index = 1
 layout_mode = 0
 offset_left = 220.0
 offset_top = 126.0
@@ -204,6 +227,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell24" type="ColorRect" parent="." unique_id=1075516008]
+z_index = 1
 layout_mode = 0
 offset_left = 267.5
 offset_top = 126.0
@@ -212,6 +236,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell25" type="ColorRect" parent="." unique_id=2084850768]
+z_index = 1
 layout_mode = 0
 offset_left = 314.75
 offset_top = 126.0
@@ -220,6 +245,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell26" type="ColorRect" parent="." unique_id=1213897942]
+z_index = 1
 layout_mode = 0
 offset_left = 362.25
 offset_top = 126.0
@@ -228,6 +254,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell27" type="ColorRect" parent="." unique_id=1645614074]
+z_index = 1
 layout_mode = 0
 offset_left = 409.75
 offset_top = 126.0
@@ -236,6 +263,7 @@ offset_bottom = 145.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell28" type="ColorRect" parent="." unique_id=1737449756]
+z_index = 1
 layout_mode = 0
 offset_left = 30.0
 offset_top = 163.0
@@ -244,6 +272,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell29" type="ColorRect" parent="." unique_id=528159430]
+z_index = 1
 layout_mode = 0
 offset_left = 77.75
 offset_top = 163.0
@@ -252,6 +281,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell30" type="ColorRect" parent="." unique_id=619652996]
+z_index = 1
 layout_mode = 0
 offset_left = 125.25
 offset_top = 163.0
@@ -260,6 +290,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell31" type="ColorRect" parent="." unique_id=959486973]
+z_index = 1
 layout_mode = 0
 offset_left = 172.5
 offset_top = 163.0
@@ -268,6 +299,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell32" type="ColorRect" parent="." unique_id=2140592720]
+z_index = 1
 layout_mode = 0
 offset_left = 220.0
 offset_top = 163.0
@@ -276,6 +308,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell33" type="ColorRect" parent="." unique_id=1376812237]
+z_index = 1
 layout_mode = 0
 offset_left = 267.5
 offset_top = 163.0
@@ -284,6 +317,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell34" type="ColorRect" parent="." unique_id=1071774063]
+z_index = 1
 layout_mode = 0
 offset_left = 314.75
 offset_top = 163.0
@@ -292,6 +326,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell35" type="ColorRect" parent="." unique_id=2084311668]
+z_index = 1
 layout_mode = 0
 offset_left = 362.25
 offset_top = 163.0
@@ -300,6 +335,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell36" type="ColorRect" parent="." unique_id=1299696327]
+z_index = 1
 layout_mode = 0
 offset_left = 409.75
 offset_top = 163.0
@@ -308,6 +344,7 @@ offset_bottom = 182.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell37" type="ColorRect" parent="." unique_id=183944308]
+z_index = 1
 layout_mode = 0
 offset_left = 30.0
 offset_top = 201.0
@@ -316,6 +353,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell38" type="ColorRect" parent="." unique_id=726791781]
+z_index = 1
 layout_mode = 0
 offset_left = 77.75
 offset_top = 201.0
@@ -324,6 +362,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell39" type="ColorRect" parent="." unique_id=1968596617]
+z_index = 1
 layout_mode = 0
 offset_left = 125.25
 offset_top = 201.0
@@ -332,6 +371,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell40" type="ColorRect" parent="." unique_id=1906081841]
+z_index = 1
 layout_mode = 0
 offset_left = 172.5
 offset_top = 201.0
@@ -340,6 +380,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell41" type="ColorRect" parent="." unique_id=1917346249]
+z_index = 1
 layout_mode = 0
 offset_left = 220.0
 offset_top = 201.0
@@ -348,6 +389,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell42" type="ColorRect" parent="." unique_id=114797508]
+z_index = 1
 layout_mode = 0
 offset_left = 267.5
 offset_top = 201.0
@@ -356,6 +398,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell43" type="ColorRect" parent="." unique_id=1670062107]
+z_index = 1
 layout_mode = 0
 offset_left = 314.75
 offset_top = 201.0
@@ -364,6 +407,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell44" type="ColorRect" parent="." unique_id=1435787613]
+z_index = 1
 layout_mode = 0
 offset_left = 362.25
 offset_top = 201.0
@@ -372,6 +416,7 @@ offset_bottom = 220.0
 color = Color(1, 0.9647059, 0.827451, 1)
 
 [node name="Cell45" type="ColorRect" parent="." unique_id=216123350]
+z_index = 1
 layout_mode = 0
 offset_left = 409.75
 offset_top = 201.0

@@ -7,7 +7,6 @@ enum RoomVisibility {
 	ACTIVE #4
 }
 
-var COLORS = [Color(255,246,211),Color(255,246,211),Color(124,63,88),Color(235,107,111),Color(249,168,117)]
 
 var rooms: Array = []
 var active_room

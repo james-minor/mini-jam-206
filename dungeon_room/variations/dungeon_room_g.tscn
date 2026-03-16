@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dimspskafgniy" path="res://dungeon_room/base_dungeon_room.tscn" id="1_2p4tf"]
 [ext_resource type="PackedScene" uid="uid://bil75xvjf1hsl" path="res://scenes/enemy/enemy.tscn" id="2_pyvhg"]
+[ext_resource type="PackedScene" uid="uid://cjhv5wn4luxe6" path="res://autoloads/minimap_ui.tscn" id="3_jhx1w"]
 
 [node name="BaseDungeonRoom" unique_id=609434640 instance=ExtResource("1_2p4tf")]
 
@@ -19,3 +20,8 @@ position = Vector2(8, 0)
 
 [node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(907243576) index="1" unique_id=1499951460 instance=ExtResource("2_pyvhg")]
 position = Vector2(-24, -56)
+
+[node name="MinimapUi" parent="CanvasLayer" parent_id_path=PackedInt32Array(1046260033) index="0" unique_id=1957161369 instance=ExtResource("3_jhx1w")]
+offset_left = 397.00003
+offset_right = 397.00012
+scale = Vector2(0.175, 0.175)

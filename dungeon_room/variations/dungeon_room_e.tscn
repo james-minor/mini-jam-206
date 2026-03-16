@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bb5okq8ad2jkd"]
 
 [ext_resource type="PackedScene" uid="uid://dimspskafgniy" path="res://dungeon_room/base_dungeon_room.tscn" id="1_26ddh"]
+[ext_resource type="PackedScene" uid="uid://cjhv5wn4luxe6" path="res://autoloads/minimap_ui.tscn" id="2_bofyw"]
 
 [node name="BaseDungeonRoom" unique_id=609434640 instance=ExtResource("1_26ddh")]
 
@@ -12,3 +13,8 @@ position = Vector2(-64, 16)
 
 [node name="HealthPickup" parent="." index="3" unique_id=1547732914]
 position = Vector2(-39, -72)
+
+[node name="MinimapUi" parent="CanvasLayer" parent_id_path=PackedInt32Array(1046260033) index="0" unique_id=1957161369 instance=ExtResource("2_bofyw")]
+offset_left = 397.00003
+offset_right = 397.00012
+scale = Vector2(0.175, 0.175)
