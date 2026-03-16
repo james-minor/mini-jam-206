@@ -10,8 +10,8 @@ func _ready() -> void:
 		if room == MapState.RoomVisibility.EMPTY or room == MapState.RoomVisibility.EMPTY:
 			continue
 		if room == MapState.RoomVisibility.REVEALED:
-			children[i].Color = MapState.COLORS[MapState.RoomVisibility.REVEALED]
+			children[i].color = MapState.COLORS[MapState.RoomVisibility.REVEALED]
 		elif room == MapState.RoomVisibility.ENTERED:
-			children[i].Color = MapState.COLORS[MapState.RoomVisibility.ENTERED]
+			children[i].color = MapState.COLORS[MapState.RoomVisibility.ENTERED]
 		else:
-			children[i].Color = MapState.COLORS[MapState.RoomVisibility.ACTIVE]
+			children[i].color = MapState.COLORS[MapState.RoomVisibility.ACTIVE]

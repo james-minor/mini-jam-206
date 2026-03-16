@@ -17,10 +17,10 @@ func _ready() -> void:
 
 
 func reveal_adjacent_rooms(center:Vector2i) -> void:
-	var up = DungeonGenerator._convert_position_to_index(center + Vector2i.UP)
-	var right = DungeonGenerator._convert_position_to_index(center + Vector2i.RIGHT)
-	var down = DungeonGenerator._convert_position_to_index(center + Vector2i.DOWN)
-	var left = DungeonGenerator._convert_position_to_index(center + Vector2i.LEFT)
+	var up = center + Vector2i.UP
+	var right = center + Vector2i.RIGHT
+	var down = center + Vector2i.DOWN
+	var left = center + Vector2i.LEFT
 	reveal_room(up)
 	reveal_room(right)
 	reveal_room(down)
