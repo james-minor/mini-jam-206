@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://bb5okq8ad2jkd"]
 
 [ext_resource type="PackedScene" uid="uid://dimspskafgniy" path="res://dungeon_room/base_dungeon_room.tscn" id="1_26ddh"]
+[ext_resource type="PackedScene" uid="uid://bil75xvjf1hsl" path="res://scenes/enemy/enemy.tscn" id="2_bofyw"]
 
 [node name="BaseDungeonRoom" unique_id=609434640 instance=ExtResource("1_26ddh")]
 
@@ -12,3 +13,9 @@ position = Vector2(-64, 16)
 
 [node name="HealthPickup" parent="." index="3" unique_id=1547732914]
 position = Vector2(-39, -72)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(907243576) index="0" unique_id=1201719158 instance=ExtResource("2_bofyw")]
+position = Vector2(80, -88)
+
+[node name="Enemy2" parent="Enemies" parent_id_path=PackedInt32Array(907243576) index="1" unique_id=1075267673 instance=ExtResource("2_bofyw")]
+position = Vector2(-96, 40)

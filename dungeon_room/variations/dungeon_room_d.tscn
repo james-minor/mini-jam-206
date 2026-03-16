@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://t0dg1ff2el0m"]
 
 [ext_resource type="PackedScene" uid="uid://dimspskafgniy" path="res://dungeon_room/base_dungeon_room.tscn" id="1_j4pv0"]
+[ext_resource type="PackedScene" uid="uid://bil75xvjf1hsl" path="res://scenes/enemy/enemy.tscn" id="2_a2e6k"]
 
 [node name="BaseDungeonRoom" unique_id=609434640 instance=ExtResource("1_j4pv0")]
 
@@ -12,3 +13,11 @@ position = Vector2(80, -80)
 
 [node name="HealthPickup" parent="." index="3" unique_id=1547732914]
 position = Vector2(-56, -73)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(907243576) index="0" unique_id=1201719158 instance=ExtResource("2_a2e6k")]
+position = Vector2(8, -72)
+
+[node name="TimerUi" parent="CanvasLayer" parent_id_path=PackedInt32Array(1046260033) index="0" unique_id=1189747434]
+anchors_preset = -1
+anchor_top = -0.089
+offset_top = 24.03
