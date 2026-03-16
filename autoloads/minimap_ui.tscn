@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cjhv5wn4luxe6"]
 
+[ext_resource type="Script" uid="uid://chlo50o3mhdep" path="res://autoloads/minimap_ui.gd" id="1_7jkto"]
 [ext_resource type="Texture2D" uid="uid://ctywymhc6kn5e" path="res://docs/concept_art/minimap_empty_concept.png" id="1_c48gr"]
 
 [node name="MinimapUi" type="Control" unique_id=1957161369]
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_7jkto")
 
 [node name="MapFrame" type="TextureRect" parent="." unique_id=383836147]
 layout_mode = 0
