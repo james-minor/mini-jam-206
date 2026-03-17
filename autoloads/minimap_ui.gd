@@ -9,14 +9,10 @@ func _ready() -> void:
 	for room in MapState.rooms:
 		i += 1
 		if room == MapState.RoomVisibility.EMPTY or room == MapState.RoomVisibility.UNSEEN:
-			print("Room %d empty/unseen. Skipping..." % [i])
-			continue
-		if room == MapState.RoomVisibility.REVEALED:
-			print("Setting %d to REVEALED" % [i])
+			pass
+		elif room == MapState.RoomVisibility.REVEALED:
 			children[i].color = COLORS[MapState.RoomVisibility.REVEALED]
 		elif room == MapState.RoomVisibility.ENTERED:
-			print("Setting %d to ENTERED" % [i])
 			children[i].color = COLORS[MapState.RoomVisibility.ENTERED]
 		else:
-			print("Setting %d to ACTIVE" % [i])
 			children[i].color = COLORS[MapState.RoomVisibility.ACTIVE]

@@ -1,4 +1,6 @@
 extends Node
+
+
 enum RoomVisibility {
 	EMPTY, #0
 	UNSEEN, #1
@@ -11,15 +13,16 @@ enum RoomVisibility {
 var rooms: Array = []
 var active_room
 
+
 func _ready() -> void:
 	DungeonGenerator.generation_complete.connect(_on_generation_completion)
 
 
 func reveal_adjacent_rooms(center:Vector2i) -> void:
-	var up = center + Vector2i.UP
-	var right = center + Vector2i.RIGHT
-	var down = center + Vector2i.DOWN
-	var left = center + Vector2i.LEFT
+	var down = center + Vector2i.UP
+	var left = center + Vector2i.RIGHT
+	var up = center + Vector2i.DOWN
+	var right = center + Vector2i.LEFT
 	reveal_room(up)
 	reveal_room(right)
 	reveal_room(down)
@@ -27,10 +30,10 @@ func reveal_adjacent_rooms(center:Vector2i) -> void:
 	
 
 func reveal_room(room: Vector2i) -> void:
-	if not DungeonGenerator.is_valid_position(room): 
+	if not DungeonGenerator.is_room(room): 
 		return
 	
-	var room_index = DungeonGenerator._convert_position_to_index(room)
+	var room_index = DungeonGenerator._convert_position_to_index(Vector2i(room.x, room.y))
 	if rooms[room_index] == RoomVisibility.UNSEEN:
 		rooms[room_index] = RoomVisibility.REVEALED
 	elif rooms[room_index] == RoomVisibility.ACTIVE:
@@ -39,31 +42,18 @@ func reveal_room(room: Vector2i) -> void:
 
 func set_room_active(room: Vector2i) -> void:
 	var index = DungeonGenerator._convert_position_to_index(room)
-	rooms[active_room] = RoomVisibility.ENTERED
+	print("Activating room %v with index %d" % [room, index])
+	rooms[DungeonGenerator._convert_position_to_index((active_room))] = RoomVisibility.ENTERED
 	rooms[index] = RoomVisibility.ACTIVE
 	reveal_adjacent_rooms(room)
 
 
-func _index_to_pos(index: int) -> Vector2i:
-	return Vector2i(index / DungeonGenerator.DIMENSIONS.x, index % DungeonGenerator.DIMENSIONS.y)
-
-
-func set_index_active(room: int) -> void:
-	var vector = _index_to_pos(room)
-	reveal_adjacent_rooms(vector)
-
-
 func _on_generation_completion():
 	#Get all non-empty rooms, add them to this dictionary with the same 
-	var i = 0
 	for room in DungeonGenerator._floor_room_types: #privacy shmivacy. I wanna use it
 		if room == DungeonGenerator.RoomType.EMPTY:
 			rooms.append(RoomVisibility.EMPTY)
 		else:
 			rooms.append(RoomVisibility.UNSEEN)
-		if room == DungeonGenerator.RoomType.START:
-			active_room = i
-			rooms[i] = RoomVisibility.ACTIVE
-		i += 1
-
-	set_index_active(active_room)
+	active_room = PlayerTracker.current_room
+	set_room_active(PlayerTracker.current_room)
