@@ -1,0 +1,427 @@
+[gd_scene format=3 uid="uid://cjhv5wn4luxe6"]
+
+[ext_resource type="Script" uid="uid://chlo50o3mhdep" path="res://autoloads/minimap_ui.gd" id="1_7jkto"]
+[ext_resource type="Texture2D" uid="uid://ctywymhc6kn5e" path="res://docs/concept_art/minimap_empty_concept.png" id="1_c48gr"]
+
+[node name="MinimapUi" type="Control" unique_id=1957161369]
+show_behind_parent = true
+z_index = -1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7jkto")
+
+[node name="MapFrame" type="TextureRect" parent="." unique_id=383836147]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("1_c48gr")
+
+[node name="Cell" type="ColorRect" parent="." unique_id=976830828]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 50.0
+offset_right = 70.0
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell2" type="ColorRect" parent="." unique_id=818199054]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 88.0
+offset_right = 70.0
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell3" type="ColorRect" parent="." unique_id=654761185]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 125.0
+offset_right = 70.0
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell4" type="ColorRect" parent="." unique_id=1145694602]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 164.0
+offset_right = 70.0
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell5" type="ColorRect" parent="." unique_id=1543586187]
+z_index = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 201.0
+offset_right = 70.0
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell6" type="ColorRect" parent="." unique_id=1838522697]
+z_index = 1
+layout_mode = 0
+offset_left = 77.5
+offset_top = 50.0
+offset_right = 117.5
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell7" type="ColorRect" parent="." unique_id=1415397109]
+z_index = 1
+layout_mode = 0
+offset_left = 77.5
+offset_top = 88.0
+offset_right = 117.5
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell8" type="ColorRect" parent="." unique_id=770645755]
+z_index = 1
+layout_mode = 0
+offset_left = 77.5
+offset_top = 125.0
+offset_right = 117.5
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell9" type="ColorRect" parent="." unique_id=1536334294]
+z_index = 1
+layout_mode = 0
+offset_left = 77.5
+offset_top = 164.0
+offset_right = 117.5
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell10" type="ColorRect" parent="." unique_id=1728878609]
+z_index = 1
+layout_mode = 0
+offset_left = 77.5
+offset_top = 201.0
+offset_right = 117.5
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell11" type="ColorRect" parent="." unique_id=1532789244]
+z_index = 1
+layout_mode = 0
+offset_left = 125.25
+offset_top = 50.0
+offset_right = 165.25
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell12" type="ColorRect" parent="." unique_id=1225929817]
+z_index = 1
+layout_mode = 0
+offset_left = 125.25
+offset_top = 88.0
+offset_right = 165.25
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell13" type="ColorRect" parent="." unique_id=2135242606]
+z_index = 1
+layout_mode = 0
+offset_left = 125.25
+offset_top = 125.0
+offset_right = 165.25
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell14" type="ColorRect" parent="." unique_id=825701570]
+z_index = 1
+layout_mode = 0
+offset_left = 125.25
+offset_top = 164.0
+offset_right = 165.25
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell15" type="ColorRect" parent="." unique_id=304107812]
+z_index = 1
+layout_mode = 0
+offset_left = 125.25
+offset_top = 201.0
+offset_right = 165.25
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell16" type="ColorRect" parent="." unique_id=2054435459]
+z_index = 1
+layout_mode = 0
+offset_left = 172.5
+offset_top = 50.0
+offset_right = 212.5
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell17" type="ColorRect" parent="." unique_id=1137752307]
+z_index = 1
+layout_mode = 0
+offset_left = 172.5
+offset_top = 88.0
+offset_right = 212.5
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell18" type="ColorRect" parent="." unique_id=660580676]
+z_index = 1
+layout_mode = 0
+offset_left = 172.5
+offset_top = 125.0
+offset_right = 212.5
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell19" type="ColorRect" parent="." unique_id=1927213305]
+z_index = 1
+layout_mode = 0
+offset_left = 172.5
+offset_top = 164.0
+offset_right = 212.5
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell20" type="ColorRect" parent="." unique_id=971437048]
+z_index = 1
+layout_mode = 0
+offset_left = 172.5
+offset_top = 201.0
+offset_right = 212.5
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell21" type="ColorRect" parent="." unique_id=78415264]
+z_index = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 50.0
+offset_right = 260.0
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell22" type="ColorRect" parent="." unique_id=2020157200]
+z_index = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 88.0
+offset_right = 260.0
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell23" type="ColorRect" parent="." unique_id=666531845]
+z_index = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 125.0
+offset_right = 260.0
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell24" type="ColorRect" parent="." unique_id=1770920022]
+z_index = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 164.0
+offset_right = 260.0
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell25" type="ColorRect" parent="." unique_id=1846402607]
+z_index = 1
+layout_mode = 0
+offset_left = 220.0
+offset_top = 201.0
+offset_right = 260.0
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell26" type="ColorRect" parent="." unique_id=1052623408]
+z_index = 1
+layout_mode = 0
+offset_left = 267.5
+offset_top = 50.0
+offset_right = 307.5
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell27" type="ColorRect" parent="." unique_id=587617206]
+z_index = 1
+layout_mode = 0
+offset_left = 267.5
+offset_top = 88.0
+offset_right = 307.5
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell28" type="ColorRect" parent="." unique_id=474684265]
+z_index = 1
+layout_mode = 0
+offset_left = 267.5
+offset_top = 125.0
+offset_right = 307.5
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell29" type="ColorRect" parent="." unique_id=745013033]
+z_index = 1
+layout_mode = 0
+offset_left = 267.5
+offset_top = 164.0
+offset_right = 307.5
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell30" type="ColorRect" parent="." unique_id=2011483434]
+z_index = 1
+layout_mode = 0
+offset_left = 267.5
+offset_top = 201.0
+offset_right = 307.5
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell31" type="ColorRect" parent="." unique_id=31876642]
+z_index = 1
+layout_mode = 0
+offset_left = 315.0
+offset_top = 50.0
+offset_right = 355.0
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell32" type="ColorRect" parent="." unique_id=1139666781]
+z_index = 1
+layout_mode = 0
+offset_left = 315.0
+offset_top = 88.0
+offset_right = 355.0
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell33" type="ColorRect" parent="." unique_id=386855436]
+z_index = 1
+layout_mode = 0
+offset_left = 315.0
+offset_top = 125.0
+offset_right = 355.0
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell34" type="ColorRect" parent="." unique_id=195769998]
+z_index = 1
+layout_mode = 0
+offset_left = 315.0
+offset_top = 164.0
+offset_right = 355.0
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell35" type="ColorRect" parent="." unique_id=2071850646]
+z_index = 1
+layout_mode = 0
+offset_left = 315.0
+offset_top = 201.0
+offset_right = 355.0
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell36" type="ColorRect" parent="." unique_id=1494427598]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 50.0
+offset_right = 402.0
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell37" type="ColorRect" parent="." unique_id=698643180]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 88.0
+offset_right = 402.0
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell38" type="ColorRect" parent="." unique_id=2125666973]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 125.0
+offset_right = 402.0
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell39" type="ColorRect" parent="." unique_id=221934490]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 164.0
+offset_right = 402.0
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell40" type="ColorRect" parent="." unique_id=1519165395]
+z_index = 1
+layout_mode = 0
+offset_left = 362.0
+offset_top = 201.0
+offset_right = 402.0
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell41" type="ColorRect" parent="." unique_id=2040161548]
+z_index = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 50.0
+offset_right = 450.0
+offset_bottom = 69.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell42" type="ColorRect" parent="." unique_id=2098407327]
+z_index = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 88.0
+offset_right = 450.0
+offset_bottom = 107.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell43" type="ColorRect" parent="." unique_id=1129746467]
+z_index = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 125.0
+offset_right = 450.0
+offset_bottom = 144.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell44" type="ColorRect" parent="." unique_id=2065029210]
+z_index = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 164.0
+offset_right = 450.0
+offset_bottom = 183.0
+color = Color(1, 0.9647059, 0.827451, 1)
+
+[node name="Cell45" type="ColorRect" parent="." unique_id=822413522]
+z_index = 1
+layout_mode = 0
+offset_left = 410.0
+offset_top = 201.0
+offset_right = 450.0
+offset_bottom = 220.0
+color = Color(1, 0.9647059, 0.827451, 1)

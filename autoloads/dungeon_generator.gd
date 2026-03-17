@@ -23,7 +23,7 @@ var run_seed: int = 0
 
 
 ## Size of the dungeon floor map.
-const DIMENSIONS: Vector2i = Vector2i(10, 5)
+const DIMENSIONS: Vector2i = Vector2i(9, 5)
 
 ## Position of the starting room for the current dungeon floor.
 var entrance_position: Vector2i = Vector2i(-1, -1)
@@ -83,6 +83,12 @@ func set_room_file(position: Vector2i, value: PackedScene) -> void:
 func is_valid_position(position: Vector2i) -> bool:
 	return (position.x >= 0 and position.x < DIMENSIONS.x and 
 			position.y >= 0 and position.y < DIMENSIONS.y)
+			
+			
+## Returns true if the passed position is within bounds and is a non-empty room.
+func is_room(position: Vector2i) -> bool:
+	return is_valid_position(position) and \
+	_floor_room_types[_convert_position_to_index(position)] != RoomType.EMPTY
 
 
 ## Generates a dungeon floor.
