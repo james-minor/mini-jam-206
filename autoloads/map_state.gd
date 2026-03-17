@@ -42,13 +42,18 @@ func reveal_room(room: Vector2i) -> void:
 
 func set_room_active(room: Vector2i) -> void:
 	var index = DungeonGenerator._convert_position_to_index(room)
-	print("Activating room %v with index %d" % [room, index])
 	rooms[DungeonGenerator._convert_position_to_index((active_room))] = RoomVisibility.ENTERED
 	rooms[index] = RoomVisibility.ACTIVE
 	reveal_adjacent_rooms(room)
 
 
+#func reset_map():
+	#for room in rooms:
+		#room 
+
+
 func _on_generation_completion():
+	rooms = []
 	#Get all non-empty rooms, add them to this dictionary with the same 
 	for room in DungeonGenerator._floor_room_types: #privacy shmivacy. I wanna use it
 		if room == DungeonGenerator.RoomType.EMPTY:

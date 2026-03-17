@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ctywymhc6kn5e" path="res://docs/concept_art/minimap_empty_concept.png" id="1_c48gr"]
 
 [node name="MinimapUi" type="Control" unique_id=1957161369]
+show_behind_parent = true
+z_index = -1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
